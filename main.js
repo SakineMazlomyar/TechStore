@@ -42,54 +42,67 @@ function addProductsToWebpage() {
 }
 
 function addPropertyToProduct(listOfProducts){
-        // we create a div for every product
+        // In this function we just call all of the other functions which containes the created elements
         var addingSingleProduct = document.createElement("div");
         addingSingleProduct.classList.add("column")
-        
-       
     
-        //we create a h3 for all names
-        var productName = document.createElement("h3");
-        productName.classList.add("col-sm-12"); 
-        productName.classList.add("text-center"); 
-     
-        productName.innerText =listOfProducts.title
-    
-        // we create a h3 for alla prices
-        var productPrice = document.createElement("h3");
-        productPrice.classList.add("text-center");
-        productName.classList.add("col");  
-        productName.classList.add("align-bottom");  
-        //productPrice.classList.add("align-bottom"); 
-        productPrice.innerText = listOfProducts.price
-    
-        //we create img for all img
-        var productImg = document.createElement("img");
-        productName.classList.add("col"); 
-        //productName.classList.add("col-"); 
-        productImg.classList.add("img-fluid");
-        productImg.src = listOfProducts.image;
-     
-        //we create p for all description
-        var productDescription = document.createElement("p");
-        productDescription.innerText = listOfProducts.description
-        productDescription.classList.add("col"); 
-        productDescription.classList.add("text-center"); 
 
-        //create shoppingProductButton here
-        var shoppingProductButton = document.createElement("shoppingProductButton");
-        shoppingProductButton.innerText = "Lägg till i kundvagnen";
-        shoppingProductButton.classList.add("btn-primary")
-        shoppingProductButton.classList.add("btn-sm")
-        shoppingProductButton.classList.add("text-center");
-        shoppingProductButton.classList.add("col");
+    // Call the funtions of the elememnts
+        addingSingleProduct.appendChild(addProductName());
+        addingSingleProduct.appendChild(addProductPrice());
+        addingSingleProduct.appendChild(addProductImages());
+        addingSingleProduct.appendChild(addProductDescription());
+        addingSingleProduct.appendChild(addShoppingButton());
         
-       
-        addingSingleProduct.appendChild(productDescription);
-        addingSingleProduct.appendChild(productName);
-        addingSingleProduct.appendChild(productImg);
-        addingSingleProduct.appendChild(productPrice);
-        addingSingleProduct.appendChild(shoppingProductButton);
         return addingSingleProduct;
+}
 
+
+
+// Create h3 elements to add the names of the products
+function addProductName () {
+    var productName = document.createElement("h3");
+    productName.classList.add("col-sm-12"); 
+    productName.classList.add("text-center"); 
+    productName.innerText =listOfProducts.title
+    return productName;
+}
+
+ // Create h3 elements to add the prices of the products
+ function addProductPrice () {
+    var productPrice = document.createElement("h3");
+    productPrice.classList.add("text-center");
+    productPrice.classList.add("col");  
+    productPrice.classList.add("align-bottom");  
+    productPrice.innerText = listOfProducts.price
+    return productPrice;
+ }
+
+ // Create images of the products
+ function addProductImages () {
+    var productImg = document.createElement("img");
+    productImg.classList.add("col"); 
+    productImg.classList.add("img-fluid");
+    productImg.src = listOfProducts.image;
+    return productImg;
+ }
+
+ // Create the descriptions of the products
+ function addProductDescription () {
+    var productDescription = document.createElement("p");
+    productDescription.innerText = listOfProducts.description
+    productDescription.classList.add("col"); 
+    productDescription.classList.add("text-center");
+    return productDescription;
+ }
+
+// Create shopping button here
+function addShoppingButton () {
+    var shoppingProductButton = document.createElement("shoppingProductButton");
+    shoppingProductButton.innerText = "Lägg till i kundvagnen";
+    shoppingProductButton.classList.add("btn-primary")
+    shoppingProductButton.classList.add("btn-sm")
+    shoppingProductButton.classList.add("text-center");
+    shoppingProductButton.classList.add("col");
+    return shoppingProductButton;
 }
