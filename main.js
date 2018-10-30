@@ -13,7 +13,6 @@ function loadProducts() {
     });
 }
 
-
 function initSite() {
     loadProducts();
     // This would also be a good place to initialize other parts of the UI
@@ -28,79 +27,64 @@ function addProductsToWebpage() {
     var divForThePictures = document.createElement("div");
     //divForThePictures.classList.add("position-relative", "container")
 
-        // We loop threw every single product
-        for(var i = 0; i < listOfProducts.length; i++){
-            //we create a function  and send our index of products then we call those function here
-            addingSingleProduct = addPropertyToProduct(listOfProducts[i]);
-            addProductName(listOfProducts[i])
-            addProductDescription (listOfProducts[i])
-            addProductImages (listOfProducts[i])
-            addProductPrice (listOfProducts[i])
-            addShoppingButton (listOfProducts[i])
+    // We loop threw every single product
+    for(var i = 0; i < listOfProducts.length; i++){
+        //we create a function  and send our index of products then we call those function here
+        divForTheProduct = createProductDiv();
 
-            divForThePictures.appendChild(addingSingleProduct)
-           
-        }
-        document.body.appendChild(divForThePictures)
-  
+        divForTheProduct.appendChild(createProductName(listOfProducts[i]));
+        divForTheProduct.appendChild(createProductDescription(listOfProducts[i]));
+        divForTheProduct.appendChild(createProductImage(listOfProducts[i]));
+        divForTheProduct.appendChild(createProductPrice(listOfProducts[i]));
+        divForTheProduct.appendChild(createShoppingButton());
+
+        divForThePictures.appendChild(divForTheProduct);
     }
+    document.body.appendChild(divForThePictures);
+}
     
-    
-    
-function addPropertyToProduct (listOfProducts) {
+function createProductDiv() {
     // we make a div for every property and call it from addProductToWebPage
     var addingSingleProduct = document.createElement("div");
     addingSingleProduct.classList.add("d-flex", "flex-column", "height", "align-items-center", )
-    
-        
     return addingSingleProduct;
 }
+
 // Here comes the creating of the elements in separeted functions
 // Create h3 elements to add the names of the products
-function addProductName (listOfProducts) {
+function createProductName(productInfo) {
     var productName = document.createElement("h3");
-    productName.innerText =listOfProducts.title
-    addingSingleProduct.appendChild(productName)
+    productName.innerText = productInfo.title
     return productName;
-
 }
 
-
 // Create images of the products
-function addProductImages (listOfProducts) {
+function createProductImage(productInfo) {
     var productImg = document.createElement("img");
     productImg.classList.add("widthtImg");
     productImg.classList.add("img-fluid");
-    
-
-    productImg.src = listOfProducts.image;
-    addingSingleProduct.appendChild(productImg);
+    productImg.src = productInfo.image;
     return productImg;
 }
 
 // Create h3 elements to add the prices of the products
-function addProductPrice (listOfProducts) {
+function createProductPrice(productInfo) {
     var productPrice = document.createElement("h3");
-    productPrice.innerText = listOfProducts.price +"kr"
-    addingSingleProduct.appendChild(productPrice);
+    productPrice.innerText = productInfo.price +"kr"
     return productPrice;
-
 }
 
 // Create the descriptions of the products
-function addProductDescription (listOfProducts) {
+function createProductDescription(productInfo) {
     var productDescription = document.createElement("h6");
-    productDescription.innerText = listOfProducts.description
-    addingSingleProduct.appendChild(productDescription);
+    productDescription.innerText = productInfo.description
     return productDescription;
 }
 
 // Create shopping button here
-function addShoppingButton (listOfProducts) {
-
+function createShoppingButton() {
     var shoppingProductButton = document.createElement("button");
     shoppingProductButton.innerText = "Lägg till i kundvagnen";
     shoppingProductButton.classList.add("btn-primary", "btn-sm")
-    addingSingleProduct.appendChild(shoppingProductButton);
     return shoppingProductButton;
 } 
