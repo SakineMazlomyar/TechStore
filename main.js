@@ -31,7 +31,7 @@ function addProductsToWebpage() {
         // we loop threw every single product
         for(var i = 0; i<listOfProducts.length; i++){
             //we create a function  and send our index of products
-            var addingSingleProduct = addingPropertyToProduct(listOfProducts[i]);
+            var addingSingleProduct = addPropertyToProduct(listOfProducts[i]);
             divForThePictures.appendChild(addingSingleProduct)
         }
         document.body.appendChild(divForThePictures)
@@ -41,7 +41,7 @@ function addProductsToWebpage() {
     // TODO: Remove the console.log and these comments when you've read them.
 }
 
-function addingPropertyToProduct(listOfProducts){
+function addPropertyToProduct(listOfProducts){
         // we create a div for every product
         var addingSingleProduct = document.createElement("div");
         addingSingleProduct.classList.add("column")
@@ -49,47 +49,47 @@ function addingPropertyToProduct(listOfProducts){
        
     
         //we create a h3 for all names
-        var getProcuctName = document.createElement("h3");
-        getProcuctName.classList.add("col-sm-12"); 
-        getProcuctName.classList.add("text-center"); 
+        var productName = document.createElement("h3");
+        productName.classList.add("col-sm-12"); 
+        productName.classList.add("text-center"); 
      
-        getProcuctName.innerText =listOfProducts.title
+        productName.innerText =listOfProducts.title
     
         // we create a h3 for alla prices
-        var getProductPrice = document.createElement("h3");
-        getProductPrice.classList.add("text-center");
-        getProcuctName.classList.add("col");  
-        getProcuctName.classList.add("align-bottom");  
-        //getProductPrice.classList.add("align-bottom"); 
-        getProductPrice.innerText = listOfProducts.price
+        var productPrice = document.createElement("h3");
+        productPrice.classList.add("text-center");
+        productName.classList.add("col");  
+        productName.classList.add("align-bottom");  
+        //productPrice.classList.add("align-bottom"); 
+        productPrice.innerText = listOfProducts.price
     
         //we create img for all img
-        var getProductImg = document.createElement("img");
-        getProcuctName.classList.add("col"); 
-        //getProcuctName.classList.add("col-"); 
-        getProductImg.classList.add("img-fluid");
-        getProductImg.src = listOfProducts.image;
+        var productImg = document.createElement("img");
+        productName.classList.add("col"); 
+        //productName.classList.add("col-"); 
+        productImg.classList.add("img-fluid");
+        productImg.src = listOfProducts.image;
      
         //we create p for all description
-        var getProductDescription = document.createElement("p");
-        getProductDescription.innerText = listOfProducts.description
-        getProductDescription.classList.add("col"); 
-        getProductDescription.classList.add("text-center"); 
+        var productDescription = document.createElement("p");
+        productDescription.innerText = listOfProducts.description
+        productDescription.classList.add("col"); 
+        productDescription.classList.add("text-center"); 
 
-        //create button here
-        var button = document.createElement("button");
-        button.innerText = "Lägg till i kundvagnen";
-        button.classList.add("btn-primary")
-        button.classList.add("btn-sm")
-        button.classList.add("text-center");
-        button.classList.add("col");
+        //create shoppingProductButton here
+        var shoppingProductButton = document.createElement("shoppingProductButton");
+        shoppingProductButton.innerText = "Lägg till i kundvagnen";
+        shoppingProductButton.classList.add("btn-primary")
+        shoppingProductButton.classList.add("btn-sm")
+        shoppingProductButton.classList.add("text-center");
+        shoppingProductButton.classList.add("col");
         
        
-        addingSingleProduct.appendChild(getProductDescription);
-        addingSingleProduct.appendChild(getProcuctName);
-        addingSingleProduct.appendChild(getProductImg);
-        addingSingleProduct.appendChild(getProductPrice);
-        addingSingleProduct.appendChild(button);
+        addingSingleProduct.appendChild(productDescription);
+        addingSingleProduct.appendChild(productName);
+        addingSingleProduct.appendChild(productImg);
+        addingSingleProduct.appendChild(productPrice);
+        addingSingleProduct.appendChild(shoppingProductButton);
         return addingSingleProduct;
 
 }
