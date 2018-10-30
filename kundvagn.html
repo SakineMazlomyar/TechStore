@@ -2,20 +2,22 @@
 
 <html>
     <head>
-        <title>kundvagn</title>
+        <title>Kundvagn</title>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href = "style.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        
-  
         <script src="./main.js"></script>
     </head>
-    <body>
-		<nav class="container-fluid  bg-dark fixed-top navbar" style="font-size: 1em">
-            <a class="text-white navbar-link" href="index.html">TechStore</a>
-            <a class="fas fa-shopping-cart  text-white navbar-text" href="kundvagn.html" target="_self"></i> 
+    <body onload="initShoppingCart()">
+        <nav class="container-fluid  bg-dark fixed-top navbar" style="font-size: 1em;">
+            <a class="text-white navbar-text" href="index.html">TechStore</a>
+            <div>
+                <div id="number-of-chosen-products" class="text-white navbar-text"></div>
+                <a class="fas fa-shopping-cart  text-white navbar-text" href="kundvagn.html" target="_self"></a>
+            </div>
         </nav>
         <main>
             <!-- Add the content of your site here via javascript -->

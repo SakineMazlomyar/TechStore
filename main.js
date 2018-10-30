@@ -1,16 +1,12 @@
-var listOfProducts;
-var addingSingleProduct;
-localStorage.setItem("shoppingCart", "[]");
-
 /** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
-    fetch("http://127.0.0.1:5500/./products.json")
+    fetch("./products.json")
     .then(function(response) {
         return response.json();
     })
     .then(function(products) {
-        listOfProducts = products;
-        addProductsToWebpage();
+        var listOfProducts = products;
+        addProductsToWebpage(listOfProducts);
     });
 }
 
@@ -20,8 +16,15 @@ function initSite() {
     // This would also be a good place to initialize other parts of the UI
 }
 
+function initShoppingCart() {
+    var shoppingCartString = localStorage.getItem("shoppingCart");
+    var shoppingCartJson = JSON.parse(shoppingCartString);
+    console.log(shoppingCartJson);
+    addProductsToWebpage(shoppingCartJson);
+}
+
 /** Uses the loaded products data to create a visible product list on the website */
-function addProductsToWebpage() {
+function addProductsToWebpage(listOfProducts) {
 
     // Check your console to see that the products are stored in the listOfProducts varible.
 
