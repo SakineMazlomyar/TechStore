@@ -39,10 +39,11 @@ function addProductsToWebpage() {
     // TODO: Remove the console.log and these comments when you've read them.
 }
 
-function addPropertyToProduct (listOfProducts) {
-        // In this function we just call all of the other functions which containes the created elements
-        var addingSingleProduct = document.createElement("div");
-        addingSingleProduct.classList.add("column")
+function addPropertyToProduct () {
+
+    // In this function we just call all of the other functions which containes the created elements
+    var addingSingleProduct = document.createElement("div");
+    addingSingleProduct.classList.add("column")
     
 
     // Call the funtions of the elememnts
