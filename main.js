@@ -2,7 +2,7 @@ var listOfProducts;
 
 /** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
-    fetch("./products.json")
+    fetch("http://127.0.0.1:5500/./products.json")
     .then(function(response) {
         return response.json();
     })
