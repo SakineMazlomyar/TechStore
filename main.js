@@ -26,22 +26,23 @@ function addProductsToWebpage() {
 
     // We create a div  and to pass all products inside it
     var divForThePictures = document.createElement("div");
-    divForThePictures.classList.add("position-relative", "container")
+    //divForThePictures.classList.add("position-relative", "container")
 
         // We loop threw every single product
         for(var i = 0; i < listOfProducts.length; i++){
             //we create a function  and send our index of products then we call those function here
             addingSingleProduct = addPropertyToProduct(listOfProducts[i]);
-            addProductDescription (listOfProducts[i])
             addProductName(listOfProducts[i])
+            addProductDescription (listOfProducts[i])
             addProductImages (listOfProducts[i])
-            addShoppingButton (listOfProducts[i])
             addProductPrice (listOfProducts[i])
+            addShoppingButton (listOfProducts[i])
 
             divForThePictures.appendChild(addingSingleProduct)
            
         }
         document.body.appendChild(divForThePictures)
+  
     }
     
     
@@ -49,7 +50,8 @@ function addProductsToWebpage() {
 function addPropertyToProduct (listOfProducts) {
     // we make a div for every property and call it from addProductToWebPage
     var addingSingleProduct = document.createElement("div");
-    addingSingleProduct.classList.add("column")
+    addingSingleProduct.classList.add("d-flex", "flex-column", "height", "align-items-center", )
+    
         
     return addingSingleProduct;
 }
@@ -57,7 +59,6 @@ function addPropertyToProduct (listOfProducts) {
 // Create h3 elements to add the names of the products
 function addProductName (listOfProducts) {
     var productName = document.createElement("h3");
-    productName.classList.add("col-sm-12", "text-center"); 
     productName.innerText =listOfProducts.title
     addingSingleProduct.appendChild(productName)
     return productName;
@@ -68,7 +69,10 @@ function addProductName (listOfProducts) {
 // Create images of the products
 function addProductImages (listOfProducts) {
     var productImg = document.createElement("img");
-    productImg.classList.add("col", "img-fluid");
+    productImg.classList.add("widthtImg");
+    productImg.classList.add("img-fluid");
+    
+
     productImg.src = listOfProducts.image;
     addingSingleProduct.appendChild(productImg);
     return productImg;
@@ -77,8 +81,7 @@ function addProductImages (listOfProducts) {
 // Create h3 elements to add the prices of the products
 function addProductPrice (listOfProducts) {
     var productPrice = document.createElement("h3");
-    productPrice.classList.add("text-center", "col", "align-bottom"); 
-    productPrice.innerText = listOfProducts.price
+    productPrice.innerText = listOfProducts.price +"kr"
     addingSingleProduct.appendChild(productPrice);
     return productPrice;
 
@@ -86,18 +89,18 @@ function addProductPrice (listOfProducts) {
 
 // Create the descriptions of the products
 function addProductDescription (listOfProducts) {
-    var productDescription = document.createElement("p");
+    var productDescription = document.createElement("h6");
     productDescription.innerText = listOfProducts.description
-    productDescription.classList.add("col", "text-center");
     addingSingleProduct.appendChild(productDescription);
     return productDescription;
 }
 
 // Create shopping button here
 function addShoppingButton (listOfProducts) {
+
     var shoppingProductButton = document.createElement("button");
     shoppingProductButton.innerText = "Lägg till i kundvagnen";
-    shoppingProductButton.classList.add("btn-primary", "btn-sm", "text-center", "col")
+    shoppingProductButton.classList.add("btn-primary", "btn-sm")
     addingSingleProduct.appendChild(shoppingProductButton);
     return shoppingProductButton;
 } 
