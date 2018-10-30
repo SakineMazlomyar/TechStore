@@ -28,7 +28,7 @@ function addProductsToWebpage() {
     //divForThePictures.classList.add("position-relative", "container")
 
     // We loop threw every single product
-    for(var i = 0; i < listOfProducts.length; i++){
+    for(var i = 0; i < listOfProducts.length; i++) {
         //we create a function  and send our index of products then we call those function here
         divForTheProduct = createProductDiv();
 
@@ -46,7 +46,7 @@ function addProductsToWebpage() {
 function createProductDiv() {
     // we make a div for every property and call it from addProductToWebPage
     var addingSingleProduct = document.createElement("div");
-    addingSingleProduct.classList.add("d-flex", "flex-column", "height", "align-items-center", )
+    addingSingleProduct.classList.add("d-flex", "flex-column", "height", "align-items-center");
     return addingSingleProduct;
 }
 
@@ -54,15 +54,14 @@ function createProductDiv() {
 // Create h3 elements to add the names of the products
 function createProductName(productInfo) {
     var productName = document.createElement("h3");
-    productName.innerText = productInfo.title
+    productName.innerText = productInfo.title;
     return productName;
 }
 
 // Create images of the products
 function createProductImage(productInfo) {
     var productImg = document.createElement("img");
-    productImg.classList.add("widthtImg");
-    productImg.classList.add("img-fluid");
+    productImg.classList.add("widthtImg", "img-fluid");
     productImg.src = productInfo.image;
     return productImg;
 }
@@ -70,14 +69,14 @@ function createProductImage(productInfo) {
 // Create h3 elements to add the prices of the products
 function createProductPrice(productInfo) {
     var productPrice = document.createElement("h3");
-    productPrice.innerText = productInfo.price +"kr"
+    productPrice.innerText = productInfo.price +"kr";
     return productPrice;
 }
 
 // Create the descriptions of the products
 function createProductDescription(productInfo) {
     var productDescription = document.createElement("h6");
-    productDescription.innerText = productInfo.description
+    productDescription.innerText = productInfo.description;
     return productDescription;
 }
 
@@ -85,6 +84,6 @@ function createProductDescription(productInfo) {
 function createShoppingButton() {
     var shoppingProductButton = document.createElement("button");
     shoppingProductButton.innerText = "Lägg till i kundvagnen";
-    shoppingProductButton.classList.add("btn-primary", "btn-sm")
+    shoppingProductButton.classList.add("btn-primary", "btn-sm");
     return shoppingProductButton;
 } 
