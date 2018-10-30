@@ -27,7 +27,7 @@ function addProductsToWebpage() {
     divForThePictures.classList.add("position-relative", "container")
 
         // We loop threw every single product
-        for(var i = 0; i<listOfProducts.length; i++){
+        for(var i = 0; i < listOfProducts.length; i++){
             //we create a function  and send our index of products
             var addingSingleProduct = addPropertyToProduct(listOfProducts[i]);
             divForThePictures.appendChild(addingSingleProduct)
@@ -39,7 +39,7 @@ function addProductsToWebpage() {
     // TODO: Remove the console.log and these comments when you've read them.
 }
 
-function addPropertyToProduct () {
+function addPropertyToProduct (listOfProducts) {
 
     // In this function we just call all of the other functions which containes the created elements
     var addingSingleProduct = document.createElement("div");
