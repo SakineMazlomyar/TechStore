@@ -24,7 +24,9 @@ function addProductsToWebpage() {
 
     // we create a div  and to pass all products inside it
     var divForThePictures = document.createElement("div");
-    //divForThePictures.classList.add("mh")
+    divForThePictures.classList.add("container")
+    divForThePictures.classList.add("position-relative")
+
         // we loop threw every single product
         for(var i = 0; i<listOfProducts.length; i++){
             //we create a function  and send our index of products
@@ -41,28 +43,34 @@ function addProductsToWebpage() {
 function addingPropertyToProduct(listOfProducts){
         // we create a div for every product
         var addingSingleProduct = document.createElement("div");
-        //addingSingleProduct.classList.add("i")
+        addingSingleProduct.classList.add("column")
+        
+       
     
         //we create a h3 for all names
         var getProcuctName = document.createElement("h3");
+        getProcuctName.classList.add("col-sm-12"); 
         getProcuctName.classList.add("text-center"); 
+     
         getProcuctName.innerText =listOfProducts.title
     
         // we create a h3 for alla prices
         var getProductPrice = document.createElement("h3");
-        getProductPrice.classList.add("text-center"); 
+        getProductPrice.classList.add("text-center");
+        getProcuctName.classList.add("col-sm");  
         //getProductPrice.classList.add("align-bottom"); 
         getProductPrice.innerText = listOfProducts.price
     
         //we create img for all img
         var getProductImg = document.createElement("img");
         getProductImg.classList.add("img-fluid");
-        //getProductImg.classList.add("mh");
+        getProcuctName.classList.add("col-sm"); 
         getProductImg.src = listOfProducts.image;
      
         //we create p for all description
         var getProductDescription = document.createElement("p");
         getProductDescription.innerText = listOfProducts.description
+        getProductDescription.classList.add("col-sm"); 
     
        
         addingSingleProduct.appendChild(getProcuctName);
