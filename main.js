@@ -1,5 +1,6 @@
 var listOfProducts;
 var addingSingleProduct;
+localStorage.setItem("shoppingCart", "[]");
 
 /** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
@@ -15,6 +16,7 @@ function loadProducts() {
 
 function initSite() {
     loadProducts();
+    updateNumberOfChosenProducts(); // Here we call the function with which we count the number of chosen products
     // This would also be a good place to initialize other parts of the UI
 }
 
@@ -36,7 +38,7 @@ function addProductsToWebpage() {
         divForTheProduct.appendChild(createProductDescription(listOfProducts[i]));
         divForTheProduct.appendChild(createProductImage(listOfProducts[i]));
         divForTheProduct.appendChild(createProductPrice(listOfProducts[i]));
-        divForTheProduct.appendChild(createShoppingButton());
+        divForTheProduct.appendChild(createShoppingButton(listOfProducts[i]));
 
         divForThePictures.appendChild(divForTheProduct);
     }
@@ -81,9 +83,27 @@ function createProductDescription(productInfo) {
 }
 
 // Create shopping button here
-function createShoppingButton() {
+function createShoppingButton(productInfo) {
     var shoppingProductButton = document.createElement("button");
     shoppingProductButton.innerText = "Lägg till i kundvagnen";
     shoppingProductButton.classList.add("btn-primary", "btn-sm");
+    shoppingProductButton.onclick = function() { onShoppingProductButtonClick(productInfo); };
     return shoppingProductButton;
 } 
+
+// Handle shoppingProductButton
+function onShoppingProductButtonClick(productInfo) {
+    var shoppingCartString = localStorage.getItem("shoppingCart");
+    var shoppingCartJson = JSON.parse(shoppingCartString);
+    shoppingCartJson.push(productInfo);
+    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartJson));
+    updateNumberOfChosenProducts();
+}
+
+// Update the indicator in the navigation bar
+function updateNumberOfChosenProducts() {
+    var productNumberIndicator = document.getElementById("number-of-chosen-products");
+    var shoppingCartString = localStorage.getItem("shoppingCart");
+    var shoppingCartJson = JSON.parse(shoppingCartString);
+    productNumberIndicator.innerText = shoppingCartJson.length;
+}
