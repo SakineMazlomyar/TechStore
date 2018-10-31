@@ -51,7 +51,7 @@ function addProductsToWebpage(listOfProducts) {
 function createProductDiv() {
     // we make a div for every property and call it from addProductToWebPage
     var addingSingleProduct = document.createElement("div");
-    addingSingleProduct.classList.add("d-flex", "flex-column", "height", "align-items-center");
+    addingSingleProduct.classList.add("d-flex", "flex-column", "height", "align-items-center", "pt-5");
     return addingSingleProduct;
 }
 
