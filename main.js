@@ -1,3 +1,4 @@
+
 /** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
     fetch("./products.json")
@@ -11,6 +12,9 @@ function loadProducts() {
 }
 
 function initSite() {
+    if (!"shoppingCart" in localStorage) {
+        localStorage.setItem("shoppingCart", "[]");
+    }
     loadProducts();
     updateNumberOfChosenProducts(); // Here we call the function to which we count the number of chosen products
     // This would also be a good place to initialize other parts of the UI
@@ -19,8 +23,8 @@ function initSite() {
 function initShoppingCart() {
     var shoppingCartString = localStorage.getItem("shoppingCart");
     var shoppingCartJson = JSON.parse(shoppingCartString);
-    console.log(shoppingCartJson);
     addProductsToWebpage(shoppingCartJson);
+    updateNumberOfChosenProducts();
 }
 
 /** Uses the loaded products data to create a visible product list on the website */
