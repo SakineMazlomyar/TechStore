@@ -12,7 +12,7 @@ function loadProducts() {
 
 function initSite() {
     loadProducts();
-    updateNumberOfChosenProducts(); // Here we call the function with which we count the number of chosen products
+    updateNumberOfChosenProducts(); // Here we call the function to which we count the number of chosen products
     // This would also be a good place to initialize other parts of the UI
 }
 
@@ -28,13 +28,13 @@ function addProductsToWebpage(listOfProducts) {
 
     // Check your console to see that the products are stored in the listOfProducts varible.
 
-    // We create a div  and to pass all products inside it
+    // We create a div and put all products inside it
     var divForThePictures = document.createElement("div");
     //divForThePictures.classList.add("position-relative", "container")
 
     // We loop threw every single product
     for(var i = 0; i < listOfProducts.length; i++) {
-        //we create a function  and send our index of products then we call those function here
+        //we create a function and send our index of products then we call those function here
         divForTheProduct = createProductDiv();
 
         divForTheProduct.appendChild(createProductName(listOfProducts[i]));
@@ -55,15 +55,16 @@ function createProductDiv() {
     return addingSingleProduct;
 }
 
-// Here comes the creating of the elements in separeted functions
-// Create h3 elements to add the names of the products
+// Here comes the creating of the elements in separated functions
+
+// Creating h3 elements for the names of the products
 function createProductName(productInfo) {
     var productName = document.createElement("h3");
     productName.innerText = productInfo.title;
     return productName;
 }
 
-// Create images of the products
+// Creating images of the products
 function createProductImage(productInfo) {
     var productImg = document.createElement("img");
     productImg.classList.add("widthtImg", "img-fluid");
@@ -71,21 +72,21 @@ function createProductImage(productInfo) {
     return productImg;
 }
 
-// Create h3 elements to add the prices of the products
+// Creating h3 elements to add prices of the products
 function createProductPrice(productInfo) {
     var productPrice = document.createElement("h3");
     productPrice.innerText = productInfo.price +"kr";
     return productPrice;
 }
 
-// Create the descriptions of the products
+// Creating the descriptions of the products
 function createProductDescription(productInfo) {
     var productDescription = document.createElement("h6");
     productDescription.innerText = productInfo.description;
     return productDescription;
 }
 
-// Create shopping button here
+// Creating shopping button here
 function createShoppingButton(productInfo) {
     var shoppingProductButton = document.createElement("button");
     shoppingProductButton.innerText = "Lägg till i kundvagnen";
