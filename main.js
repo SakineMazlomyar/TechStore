@@ -1,11 +1,12 @@
 /** Get products from the json file and store it in a gobal variable */
+var listOfProducts;
 function loadProducts() {
     fetch("./products.json")
     .then(function(response) {
         return response.json();
     })
     .then(function(products) {
-        var listOfProducts = products;
+        listOfProducts = products;
         addProductsToWebpage(listOfProducts);
     });
 }
@@ -36,12 +37,11 @@ function addProductsToWebpage(listOfProducts) {
     for(var i = 0; i < listOfProducts.length; i++) {
         //we create a function and send our index of products then we call those function here
         divForTheProduct = createProductDiv();
-
-        divForTheProduct.appendChild(createProductName(listOfProducts[i]));
-        divForTheProduct.appendChild(createProductDescription(listOfProducts[i]));
-        divForTheProduct.appendChild(createProductImage(listOfProducts[i]));
-        divForTheProduct.appendChild(createProductPrice(listOfProducts[i]));
-        divForTheProduct.appendChild(createShoppingButton(listOfProducts[i]));
+        createProductName(listOfProducts[i]);
+        createProductDescription(listOfProducts[i]);
+        createProductImage(listOfProducts[i]);
+        createProductPrice(listOfProducts[i]);
+        createShoppingButton(listOfProducts[i]);
 
         divForThePictures.appendChild(divForTheProduct);
     }
@@ -58,49 +58,54 @@ function createProductDiv() {
 // Here comes the creating of the elements in separated functions
 
 // Creating h3 elements for the names of the products
-function createProductName(productInfo) {
+function createProductName(listOfProducts) {
     var productName = document.createElement("h3");
-    productName.innerText = productInfo.title;
+    productName.innerText = listOfProducts.title;
+    divForTheProduct.appendChild(productName)
     return productName;
 }
 
 // Creating images of the products
-function createProductImage(productInfo) {
+function createProductImage(listOfProducts) {
     var productImg = document.createElement("img");
     productImg.classList.add("widthtImg", "img-fluid");
-    productImg.src = productInfo.image;
+    productImg.src = listOfProducts.image;
+    divForTheProduct.appendChild(productImg)
     return productImg;
 }
 
 // Creating h3 elements to add prices of the products
-function createProductPrice(productInfo) {
+function createProductPrice(listOfProducts) {
     var productPrice = document.createElement("h3");
-    productPrice.innerText = productInfo.price +"kr";
+    productPrice.innerText = listOfProducts.price +"kr";
+    divForTheProduct.appendChild(productPrice)
     return productPrice;
 }
 
 // Creating the descriptions of the products
-function createProductDescription(productInfo) {
+function createProductDescription(listOfProducts) {
     var productDescription = document.createElement("h6");
-    productDescription.innerText = productInfo.description;
+    productDescription.innerText = listOfProducts.description;
     productDescription.classList.add("text-center", "font-weight-bold");
+    divForTheProduct.appendChild(productDescription)
     return productDescription;
 }
 
 // Creating shopping button here
-function createShoppingButton(productInfo) {
+function createShoppingButton(listOfProducts) {
     var shoppingProductButton = document.createElement("button");
     shoppingProductButton.innerText = "Lägg till i kundvagnen";
     shoppingProductButton.classList.add("btn-primary", "btn-sm");
-    shoppingProductButton.onclick = function() { onShoppingProductButtonClick(productInfo); };
+    shoppingProductButton.onclick = function() { onShoppingProductButtonClick(listOfProducts); };
+    divForTheProduct.appendChild(shoppingProductButton)
     return shoppingProductButton;
 } 
 
 // Handle shoppingProductButton
-function onShoppingProductButtonClick(productInfo) {
+function onShoppingProductButtonClick(listOfProducts) {
     var shoppingCartString = localStorage.getItem("shoppingCart");
     var shoppingCartJson = JSON.parse(shoppingCartString);
-    shoppingCartJson.push(productInfo);
+    shoppingCartJson.push(listOfProducts);
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartJson));
     updateNumberOfChosenProducts();
 }
