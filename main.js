@@ -83,6 +83,7 @@ function createProductPrice(productInfo) {
 function createProductDescription(productInfo) {
     var productDescription = document.createElement("h6");
     productDescription.innerText = productInfo.description;
+    productDescription.classList.add("text-center", "font-weight-bold");
     return productDescription;
 }
 
