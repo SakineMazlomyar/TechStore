@@ -59,7 +59,7 @@ function createProductDiv() {
 
 // Creating h3 elements for the names of the products
 function createProductName(listOfProducts) {
-    var productName = document.createElement("h3");
+    var productName = document.createElement("h4");
     productName.innerText = listOfProducts.title;
     divForTheProduct.appendChild(productName)
     return productName;
@@ -68,7 +68,7 @@ function createProductName(listOfProducts) {
 // Creating images of the products
 function createProductImage(listOfProducts) {
     var productImg = document.createElement("img");
-    productImg.classList.add("widthtImg", "img-fluid");
+    productImg.classList.add("widthtImg");
     productImg.src = listOfProducts.image;
     divForTheProduct.appendChild(productImg)
     return productImg;
@@ -76,7 +76,7 @@ function createProductImage(listOfProducts) {
 
 // Creating h3 elements to add prices of the products
 function createProductPrice(listOfProducts) {
-    var productPrice = document.createElement("h3");
+    var productPrice = document.createElement("h4");
     productPrice.innerText = listOfProducts.price +"kr";
     divForTheProduct.appendChild(productPrice)
     return productPrice;
