@@ -13,7 +13,7 @@ function loadProducts() {
 }
 
 function initSite() {
-    if (!"shoppingCart" in localStorage) {
+    if (!("shoppingCart" in localStorage)) {
         localStorage.setItem("shoppingCart", "[]");
     }
     loadProducts();
