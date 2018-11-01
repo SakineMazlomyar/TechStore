@@ -121,3 +121,13 @@ function updateNumberOfChosenProducts() {
     var shoppingCartJson = JSON.parse(shoppingCartString);
     productNumberIndicator.innerText = shoppingCartJson.length;
 }
+
+function deleteButtonProducts() {
+    var deleteButton = document.createElement("button");
+    deleteButton.innerText = "Ta bort";
+    deleteButton.classList.add("btn-primary", "btn-sm");
+    deleteButton.onclick = function() {};
+    divForTheProduct.appendChild(deleteButton);
+    return deleteButton;
+    
+}
