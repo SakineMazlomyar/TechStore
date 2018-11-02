@@ -1,6 +1,9 @@
 
 /** Get products from the json file and store it in a gobal variable */
 var listOfProducts;
+var shoppingCartString;
+var productNumberIndicator;
+
 function loadProducts() {
     fetch("./products.json")
     .then(function(response) {
@@ -46,7 +49,8 @@ function addProductsToWebpage(listOfProducts) {
         createProductImage(listOfProducts[i]);
         createProductPrice(listOfProducts[i]);
         createShoppingButton(listOfProducts[i]);
-
+        createDeleteButton(listOfProducts[i]);
+        
         divForThePictures.appendChild(divForTheProduct);
     }
     document.body.appendChild(divForThePictures);
@@ -122,12 +126,18 @@ function updateNumberOfChosenProducts() {
     productNumberIndicator.innerText = shoppingCartJson.length;
 }
 
-function deleteButtonProducts() {
+function createDeleteButton(listOfProducts) {
     var deleteButton = document.createElement("button");
     deleteButton.innerText = "Ta bort";
     deleteButton.classList.add("btn-primary", "btn-sm");
-    deleteButton.onclick = function() {};
+    deleteButton.onclick = function() { deleteButtonClick(listOfProducts) };
     divForTheProduct.appendChild(deleteButton);
     return deleteButton;
-    
+}
+
+function deleteButtonClick() {
+    var getItemInLocal = localStorage.getItem("shoppingCart");
+    var getJsonToDelete = JSON.parse(getItemInLocal);
+    getJsonToDelete.shift();
+
 }
