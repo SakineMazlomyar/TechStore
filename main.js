@@ -1,8 +1,6 @@
 
 /** Get products from the json file and store it in a gobal variable */
 var listOfProducts;
-var shoppingCartString;
-var productNumberIndicator;
 
 function loadProducts() {
     fetch("./products.json")
@@ -100,7 +98,7 @@ function createProductDescription(listOfProducts) {
 }
 
 // Creating shopping button here
-function createShoppingButton(listOfProducts) {
+function createShoppingButton(listOfProducts) { 
     var shoppingProductButton = document.createElement("button");
     shoppingProductButton.innerText = "Lägg till i kundvagnen";
     shoppingProductButton.classList.add("btn-primary", "btn-sm");
@@ -110,10 +108,10 @@ function createShoppingButton(listOfProducts) {
 } 
 
 // Handle shoppingProductButton
-function onShoppingProductButtonClick(listOfProducts) {
+function onShoppingProductButtonClick(singleProduct) {
     var shoppingCartString = localStorage.getItem("shoppingCart");
     var shoppingCartJson = JSON.parse(shoppingCartString);
-    shoppingCartJson.push(listOfProducts);
+    shoppingCartJson.push(singleProduct);
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartJson));
     updateNumberOfChosenProducts();
 }
