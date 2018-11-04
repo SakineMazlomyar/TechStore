@@ -137,9 +137,9 @@ function createDeleteButton(listOfProducts) {
 
 //still in experiment, suggest methods but dont touch the code. I Want to learn! 
 function deleteButtonClick() {
-    var getItemInLocal = localStorage.getItem("shoppingCart");
-    var getJsonToDelete = JSON.parse(getItemInLocal);
-    getJsonToDelete.shift();
+    var ItemToDelete = localStorage.getItem("shoppingCart");
+    var JsonToDelete = JSON.parse(ItemToDelete);
+    JsonToDelete.splice(0, 1);
+    localStorage.setItem("shoppingCart", JSON.stringify(JsonToDelete));
     updateNumberOfChosenProducts();
-
 }
