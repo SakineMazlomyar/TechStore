@@ -50,6 +50,7 @@ function ProductsInKundvagnWebPage (productCartJson) {
         imageProductInCart(productCartJson[i]);
         titleProductInCart(productCartJson[i]);
         priceProductInCart(productCartJson[i]);
+        createDeleteButton(productCartJson[i])
 
 
         divForTheProductsInKundvagn.appendChild(divForTheProduct);
@@ -89,4 +90,20 @@ function priceProductInCart(productCartJson) {
     return priceProduct;
 }
 
+function createDeleteButton(productCartJson) {
+    var deleteButton = document.createElement("button");
+    deleteButton.innerText = "Ta bort";
+    deleteButton.classList.add("btn-danger", "btn-lg");
+    deleteButton.onclick = function() { deleteButtonClick(productCartJson) };
+    divForTheProduct.appendChild(deleteButton);
+    return deleteButton;
+}
 
+//still in experiment, suggest methods but dont touch the code. I Want to learn! 
+function deleteButtonClick() {
+    var ItemToDelete = localStorage.getItem("shoppingCart");
+    var JsonToDelete = JSON.parse(ItemToDelete);
+    JsonToDelete.splice(0, 1);
+    localStorage.setItem("shoppingCart", JSON.stringify(JsonToDelete));
+    updateNumberOfChosenProducts();
+}
