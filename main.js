@@ -109,12 +109,12 @@ function createShoppingButton(listOfProducts) {
 // Handle shoppingProductButton
 function onShoppingProductButtonClick(listOfProducts) {
     var shoppingCartString = localStorage.getItem("shoppingCart");
-    
+
     //Byt Namn? (shoppingCartJson)
     var shoppingCartJson = JSON.parse(shoppingCartString);
 
     // Add a property to the object to distinguish mobiles of the same brand
-    listOfProducts["indexOfShoppingCart"] = shoppingCartJson.length;
+    listOfProducts["IdNr"] = shoppingCartJson.length;
 
     shoppingCartJson.push(listOfProducts);
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartJson));
