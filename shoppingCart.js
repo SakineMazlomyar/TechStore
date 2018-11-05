@@ -36,25 +36,32 @@ function updateNumberOfChosenProducts() {
 
 function ProductsInKundvagnWebPage (shoppingCartJson) {
    
-    //var ProductInCart = localStorage.getItem("shoppingCart");
+    var productInCart = localStorage.getItem("shoppingCart");
+    var productCartJson = JSON.parse(productInCart);
+    
+    var divForTheProductsInKundvagn = document.createElement("div");
 
-    var divForTheProductInKundvagn = document.createElement("div");
+ for(var i = 0; i < productCartJson.length; i++) {
+        
+        divForTheProduct = productDiv();
 
- for(var i = 0; i < shoppingCartJson.length; i++) {
-        divForTheProduct = document.createElement("div");
-        productName = productDiv(shoppingCartJson[i]);
+        divForTheProductsInKundvagn.appendChild(divForTheProduct);
     }
 
-    divForTheProductInKundvagn.appendChild(divForTheProduct);
 
-    
+    document.body.appendChild(divForTheProductInKundvagn);
 
 }
 
 function productDiv() {
     var oneProductDiv = document.createElement("div");
-    oneProductDiv.classList.add("d-flex", "flex-row", "justify-content-center");
+    oneProductDiv.classList.add("d-flex", "flex-row", "justify-content-center", "width");
     return oneProductDiv;
 }
 
-    var ProductInCart = localStorage.getItem("shoppingCart");
+function imageProductInCart(productCartJson) {
+    var imageProduct = document.createElement("img");
+    imageProduct.add("widthImg");
+    imageProduct.src = productCartJson.image;
+    divForTheProduct.appendChild(imageProduct);
+}
