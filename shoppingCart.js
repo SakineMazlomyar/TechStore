@@ -38,11 +38,12 @@ function updateNumberOfChosenProducts() {
 }
 
 function ProductsInKundvagnWebPage (productCartJson) {
+    var divForHeader = document.createElement("div");
     var divForTheProductsInKundvagn = document.createElement("div");
     var productInCart = localStorage.getItem("shoppingCart");
     var productCartJson = JSON.parse(productInCart);
     
-    
+    divForHeader = shoppingCartHeader();
 
  for(var i = 0; i < productCartJson.length; i++) {
         
@@ -56,10 +57,20 @@ function ProductsInKundvagnWebPage (productCartJson) {
         divForTheProductsInKundvagn.appendChild(divForTheProduct);
     }
 
-
+    document.body.appendChild(divForHeader);
     document.body.appendChild(divForTheProductsInKundvagn);
 
 }
+
+//can we put header some other way?
+function shoppingCartHeader() {
+    var cartHeader = document.createElement("div");
+    cartHeader.classList.add("container", "text-center", "font-weight-bold");
+    cartHeader.innerHTML = '<i class="fas fa-trash-alt"></i>';
+    cartHeader.innerText = "Kundvagn"; 
+    return cartHeader;
+}
+
 
 function productDiv() {
     var oneProductDiv = document.createElement("div");
@@ -92,6 +103,7 @@ function priceProductInCart(productCartJson) {
 
 function createDeleteButton(productCartJson) {
     var deleteButton = document.createElement("button");
+    //deletebutton.innerHTML = '<i class="fas fa-trash-alt"></i>';
     deleteButton.innerText = "Ta bort";
     deleteButton.classList.add("btn-danger", "btn-lg");
     deleteButton.onclick = function() { deleteButtonClick(productCartJson) };
