@@ -2,6 +2,13 @@ body{
     height: 100%;
 }
 
+.container {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    height: auto;
+    font-size: 3.7em;
+}
+
 .height{
     margin-top: 2em;
     height: 100%;
