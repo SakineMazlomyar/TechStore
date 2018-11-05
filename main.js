@@ -107,10 +107,16 @@ function createShoppingButton(listOfProducts) {
 } 
 
 // Handle shoppingProductButton
-function onShoppingProductButtonClick(singleProduct) {
+function onShoppingProductButtonClick(listOfProducts) {
     var shoppingCartString = localStorage.getItem("shoppingCart");
+    
+    //Byt Namn? (shoppingCartJson)
     var shoppingCartJson = JSON.parse(shoppingCartString);
-    shoppingCartJson.push(singleProduct);
+
+    // Add a property to the object to distinguish mobiles of the same brand
+    listOfProducts["indexOfShoppingCart"] = shoppingCartJson.length;
+
+    shoppingCartJson.push(listOfProducts);
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartJson));
     updateNumberOfChosenProducts();
 }
