@@ -1,5 +1,5 @@
 var listOfProducts;
-var shoppingCartJson;
+var productCartJson;
 
 function loadProducts() {
     fetch("./products.json")
@@ -14,11 +14,14 @@ function loadProducts() {
 
 
 function initShoppingCart() {
-    shoppingCartString = localStorage.getItem("shoppingCart");
-    shoppingCartJson = JSON.parse(shoppingCartString);
+    var shoppingCartString = localStorage.getItem("shoppingCart");
+    var shoppingCartJson = JSON.parse(shoppingCartString);
     if (!("shoppingCart" in localStorage)) {
         localStorage.setItem("shoppingCart", "[]");
     }
+    var productInCart = localStorage.getItem("shoppingCart");
+    
+    productCartJson = JSON.parse(productInCart);
     /*loadProducts();*/
 
     /*addProductsToWebpage(shoppingCartJson);*/
@@ -34,34 +37,56 @@ function updateNumberOfChosenProducts() {
     productNumberIndicator.innerText = shoppingCartJson.length;
 }
 
-function ProductsInKundvagnWebPage (shoppingCartJson) {
-   
+function ProductsInKundvagnWebPage (productCartJson) {
+    var divForTheProductsInKundvagn = document.createElement("div");
     var productInCart = localStorage.getItem("shoppingCart");
     var productCartJson = JSON.parse(productInCart);
     
-    var divForTheProductsInKundvagn = document.createElement("div");
+    
 
  for(var i = 0; i < productCartJson.length; i++) {
         
         divForTheProduct = productDiv();
+        imageProductInCart(productCartJson[i]);
+        titleProductInCart(productCartJson[i]);
+        priceProductInCart(productCartJson[i]);
+
 
         divForTheProductsInKundvagn.appendChild(divForTheProduct);
     }
 
 
-    document.body.appendChild(divForTheProductInKundvagn);
+    document.body.appendChild(divForTheProductsInKundvagn);
 
 }
 
 function productDiv() {
     var oneProductDiv = document.createElement("div");
-    oneProductDiv.classList.add("d-flex", "flex-row", "justify-content-center", "width");
+    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "width");
     return oneProductDiv;
 }
 
 function imageProductInCart(productCartJson) {
     var imageProduct = document.createElement("img");
-    imageProduct.add("widthImg");
+    imageProduct.classList.add("widthtImg");
     imageProduct.src = productCartJson.image;
     divForTheProduct.appendChild(imageProduct);
 }
+
+function titleProductInCart(productCartJson) {
+    var titleProduct = document.createElement("h1");
+    titleProduct.classList.add("font-weight-bold");
+    titleProduct.innerText = productCartJson.title;
+    divForTheProduct.appendChild(titleProduct);
+    return titleProduct;
+}
+
+function priceProductInCart(productCartJson) {
+    var priceProduct = document.createElement("h5");
+    priceProduct.classList.add("font-weight-bold");
+    priceProduct.innerText = productCartJson.price + "kr";
+    divForTheProduct.appendChild(priceProduct);
+    return priceProduct;
+}
+
+
