@@ -66,8 +66,7 @@ function ProductsInKundvagnWebPage (productCartJson) {
 function shoppingCartHeader() {
     var cartHeader = document.createElement("div");
     cartHeader.classList.add("container", "text-center", "font-weight-bold");
-    cartHeader.innerHTML = '<i class="fas fa-trash-alt"></i>';
-    cartHeader.innerText = "Kundvagn"; 
+    cartHeader.innerHTML = '<i class="fas fa-trash-alt"></i>' + "Kundvagn";
     return cartHeader;
 }
 
