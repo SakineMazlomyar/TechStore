@@ -14,17 +14,13 @@ function loadProducts() {
 
 
 function initShoppingCart() {
-    var shoppingCartString = localStorage.getItem("shoppingCart");
-    var shoppingCartJson = JSON.parse(shoppingCartString);
+    
     if (!("shoppingCart" in localStorage)) {
         localStorage.setItem("shoppingCart", "[]");
     }
     var productInCart = localStorage.getItem("shoppingCart");
-    
     productCartJson = JSON.parse(productInCart);
-    /*loadProducts();*/
 
-    /*addProductsToWebpage(shoppingCartJson);*/
     ProductsInKundvagnWebPage(listOfProducts);
     updateNumberOfChosenProducts();
 }
@@ -62,7 +58,7 @@ function ProductsInKundvagnWebPage (productCartJson) {
 
 }
 
-//can we put header some other way?
+//Header for "kundvagn.html"
 function shoppingCartHeader() {
     var cartHeader = document.createElement("div");
     cartHeader.classList.add("container", "text-center", "font-weight-bold");
@@ -100,6 +96,7 @@ function priceProductInCart(productCartJson) {
     return priceProduct;
 }
 
+//create delete button here
 function createDeleteButton(productCartJson) {
     var deleteButton = document.createElement("button");
     //deletebutton.innerHTML = '<i class="fas fa-trash-alt"></i>';
@@ -110,7 +107,7 @@ function createDeleteButton(productCartJson) {
     return deleteButton;
 }
 
-//still in experiment, suggest methods but dont touch the code. I Want to learn! 
+//create delete function here
 function deleteButtonClick(productCartJson) {
 
     var ItemToDelete = localStorage.getItem("shoppingCart");
