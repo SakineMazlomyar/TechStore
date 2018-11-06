@@ -107,10 +107,19 @@ function createShoppingButton(listOfProducts) {
 } 
 
 // Handle shoppingProductButton
-function onShoppingProductButtonClick(singleProduct) {
+function onShoppingProductButtonClick(listOfProducts) {
     var shoppingCartString = localStorage.getItem("shoppingCart");
+
+    //Byt Namn? (shoppingCartJson)
     var shoppingCartJson = JSON.parse(shoppingCartString);
-    shoppingCartJson.push(singleProduct);
+
+    // Add a property to the object to distinguish mobiles of the same brand
+    //Add an unique IdNr
+	var d = new Date();
+	var timeStamp = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds();	
+	listOfProducts["IdNr"] = timeStamp;
+
+    shoppingCartJson.push(listOfProducts);
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartJson));
     updateNumberOfChosenProducts();
 }

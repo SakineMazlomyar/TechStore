@@ -111,10 +111,19 @@ function createDeleteButton(productCartJson) {
 }
 
 //still in experiment, suggest methods but dont touch the code. I Want to learn! 
-function deleteButtonClick() {
+function deleteButtonClick(productCartJson) {
+
     var ItemToDelete = localStorage.getItem("shoppingCart");
     var JsonToDelete = JSON.parse(ItemToDelete);
-    JsonToDelete.splice(0, 1);
+    var index = 0;
+    for(var i = 0; i < JsonToDelete.length; i++) {
+        if(productCartJson.idNr == JsonToDelete[i].idNr) {
+            index = i;
+        }
+    };
+    
+    JsonToDelete.splice(index, 1)
     localStorage.setItem("shoppingCart", JSON.stringify(JsonToDelete));
     updateNumberOfChosenProducts();
-}
+    location.reload(false);
+};
