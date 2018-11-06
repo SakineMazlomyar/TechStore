@@ -116,13 +116,14 @@ function deleteButtonClick(productCartJson) {
     var ItemToDelete = localStorage.getItem("shoppingCart");
     var JsonToDelete = JSON.parse(ItemToDelete);
     var index = 0;
+
     for(var i = 0; i < JsonToDelete.length; i++) {
         if(productCartJson.idNr == JsonToDelete[i].idNr) {
             index = i;
         }
     };
     
-    JsonToDelete.splice(index, 1)
+    JsonToDelete.splice(index, 1);
     localStorage.setItem("shoppingCart", JSON.stringify(JsonToDelete));
     updateNumberOfChosenProducts();
     location.reload(false);
