@@ -118,7 +118,7 @@ function deleteButtonClick(productCartJson) {
     var index = 0;
 
     for(var i = 0; i < JsonToDelete.length; i++) {
-        if(productCartJson.idNr == JsonToDelete[i].idNr) {
+        if(productCartJson.IdNr == JsonToDelete[i].IdNr) {
             index = i;
         }
     };
