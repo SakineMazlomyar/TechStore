@@ -16,34 +16,16 @@
 </head>
 
 <body onload="initSite()">
-    <nav class="container-fluid bg-dark fixed-top navbar" style="font-size: 1em;">
-        <a class="text-white navbar-text fontSize" href="index.html">TechStore</a>
-        <div id="right-div">
-            <form>
-                <input type="text" placeholder="Username" name="username">
-                <input type="text" placeholder="Password" name="password">
-                <button type="submit" class="login-button btn">Login</button>
-            </form>
-            <button onclick="document.getElementById('register').style.display='block'" class="btn btn-link go-to-registration-button">Register</button>
-            <div id="number-of-chosen-products" class="text-white navbar-text"></div>
-            <a class="fas fa-shopping-cart text-white navbar-text fontSize kundvagn-icon" href="kundvagn.html" target="_self"></a>
-        </div>
-    </nav>
+        <nav class="container-fluid bg-dark fixed-top navbar" style="font-size: 1em;">
+                <a class="text-white navbar-text fontSize" href="index.html">TechStore</a>
+                <div>
+                    <div id="number-of-chosen-products" class="text-white navbar-text"></div>
+                    <a class="fas fa-shopping-cart text-white navbar-text fontSize" href="kundvagn.html" target="_self"></a>
+                </div>
+            </nav>
     <!-- Your header title and shopping cart button goes here  -->
     <main>
-        <!-- This is the regsiter div -->>
-        <div id="register" class="register-main-container">
-            <form class="register-content animate">
-                <div class="register-container">
-                    <label for="uname" id="username-label"><b>Username</b></label>
-                    <input class="register-input" type="text" placeholder="Enter Username" name="uname" required>
-                    <label for="psw" id="password-label"><b>Password</b></label>
-                    <input class="register-input" type="password" placeholder="Enter Password" name="psw" required>
-                    <button type="submit" class="btn btn-success register-button">Register</button>
-                    <button type="button" onclick="document.getElementById('register').style.display='none'" class="btn btn-danger cancel-button">Cancel</button>
-                </div>
-            </form>
-        </div>
+        <!-- The main content goes here creating by Javascript  -->
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
