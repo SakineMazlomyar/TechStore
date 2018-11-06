@@ -115,8 +115,8 @@ function onShoppingProductButtonClick(listOfProducts) {
 
     // Add a property to the object to distinguish mobiles of the same brand
     //Add an unique IdNr
-	var d = new Date();
-	var timeStamp = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + ":" + d.getMilliseconds();	
+	var date = new Date();
+	var timeStamp = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + ":" + date.getMilliseconds();	
 	listOfProducts["IdNr"] = timeStamp;
 
     shoppingCartJson.push(listOfProducts);
