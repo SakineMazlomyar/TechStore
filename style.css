@@ -184,12 +184,12 @@ button:hover {
 
 .wideImg {
     object-fit: contain;
-    height: 50%;
-    width: 50%;
+    height: 60%;
+    width: 80%;
 }
 
 .buttonCart {
-    margin-top: 1em;
+    margin-bottom: -5.5em;
 }
 
 /*end of kundvagn*/
