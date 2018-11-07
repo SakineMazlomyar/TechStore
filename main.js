@@ -36,7 +36,7 @@ function addProductsToWebpage(listOfProducts) {
 
     // We create a div and put all products inside it
     var divForThePictures = document.createElement("div");
-    //divForThePictures.classList.add("position-relative", "container")
+    divForThePictures.classList.add("container")
 
     // We loop threw every single product
     for(var i = 0; i < listOfProducts.length; i++) {
