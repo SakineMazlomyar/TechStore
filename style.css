@@ -12,11 +12,6 @@ h3{
     font-size: 2.5vw !important
 }
 
-.divProduct {
-    margin: 1em;
-    
-}
-
 #right-div{
     display: flex;
     flex-wrap: wrap;
@@ -33,6 +28,10 @@ h3{
     margin-bottom: 2em;
     height: auto;
     font-size: 3.7em;
+}
+
+.productRow {
+    margin-top: -1em;
 }
 
 #number-of-chosen-products{
@@ -127,6 +126,7 @@ button:hover {
 }
 /* The end of log in site */
 
+<<<<<<< HEAD
 /* Register block */
 
 .register-button{
@@ -169,6 +169,33 @@ button:hover {
 }
 /* This is the end of the register block */
 
+=======
+/*Kundvagn site*/
+
+.divRow {
+    margin-top: -1.5em;
+}
+.divProduct {
+    padding-top: 0.1em;
+    margin: 0.2em;
+    width: 20%;
+    border: 2px solid #5596F5;
+    border-radius: 0.2em;
+    background-color: #F5F5F5;
+}
+
+.wideImg {
+    object-fit: contain;
+    height: 50%;
+    width: 50%;
+}
+
+.buttonCart {
+    margin-top: 1em;
+}
+
+/*end of kundvagn*/
+>>>>>>> 5c9439c678601837a43250112de37b9bcfc9d03f
 
 @media screen and (min-width: 350px){
     .widthtImg{
@@ -231,3 +258,6 @@ button:hover {
     }
 
 }
+
+
+
