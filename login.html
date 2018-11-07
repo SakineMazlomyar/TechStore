@@ -20,27 +20,31 @@
         <a class="text-white navbar-text fontSize" href="index.html">TechStore</a>
     </nav>
     <!-- Your header title and shopping cart button goes here  -->
-    <main>
-        <!-- This is the regsiter div -->>
-        <form>
-            <button type="submit" class="login-button btn">Login</button>
-            <input type="text" placeholder="Username" name="username">
-            <input type="text" placeholder="Password" name="password">
-        </form>
-        <button onclick="document.getElementById('register').style.display='block'" class="btn btn-link go-to-registration-button">Register</button>
+    <main class="login-main">
+            <h2>Log in to your TechStore account</h2>
 
-        <div id="register" class="register-main-container">
-            <form class="register-content animate">
-                <div class="register-container">
-                    <label for="uname" id="username-label"><b>Username</b></label>
-                    <input class="register-input" type="text" placeholder="Enter Username" name="uname" required>
-                    <label for="psw" id="password-label"><b>Password</b></label>
-                    <input class="register-input" type="password" placeholder="Enter Password" name="psw" required>
-                    <button type="submit" class="btn btn-success register-button">Register</button>
-                    <button type="button" onclick="document.getElementById('register').style.display='none'" class="btn btn-danger cancel-button">Cancel</button>
-                </div>
+            <form class="login-form">
+              <div class="avatar-container">
+                <img src="images/avatar.png" alt="Avatar" class="avatar">
+              </div>
+            
+              <div class="login-container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                <button type="submit" class="login-button">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember" class="remember-me"> Remember me
+                </label>
+              </div>
+            
+              <div class="login-bottom-container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn">Cancel</button>
+              </div>
             </form>
-        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
