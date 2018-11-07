@@ -73,7 +73,7 @@ function shoppingCartHeader() {
 
 function divProductRow() {
     AllProductsRow = document.createElement("div");
-    AllProductsRow.classList.add("container-fluid", "d-flex", "justify-content-around");
+    AllProductsRow.classList.add("container-fluid", "d-flex");
     return AllProductsRow;
 }
 
