@@ -67,3 +67,8 @@ function loginToThePage() {
         alert("This username does not exist!");
     }
 }
+
+function logOut() {
+    localStorage.setItem("loggedInAs", "");
+    location.reload(false);
+}

@@ -13,18 +13,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <script src="./main.js"></script>
+    <script src="./login.js"></script>
 </head>
 
 <body onload="initSite()">
-        <nav class="container-fluid bg-dark fixed-top navbar" style="font-size: 1em;">
-            <a class="text-white navbar-text fontSize" href="index.html">TechStore</a>
-            <div>
-                <div id="loggedInUsernameDiv">vv</div>
-                <a href="login.html"><button class="go-to-login-page-button">Log in / Register</button></a>
-                <div id="number-of-chosen-products" class="text-white navbar-text"></div>
-                <a class="fas fa-shopping-cart text-white navbar-text fontSize" href="kundvagn.html" target="_self"></a>
-            </div>
-        </nav>
+    <nav class="container-fluid bg-dark fixed-top navbar" style="font-size: 1em;">
+        <a class="text-white navbar-text fontSize" href="index.html">TechStore</a>
+        <div>
+            <div id="loggedInUsernameDiv"></div>
+            <a href="login.html"><button class="go-to-login-page-button">Log in / Register</button></a>
+            <button class="go-to-login-page-button" onclick="logOut()">Log out</button>
+            <div id="number-of-chosen-products" class="text-white navbar-text"></div>
+            <a class="fas fa-shopping-cart text-white navbar-text fontSize" href="kundvagn.html" target="_self"></a>
+        </div>
+    </nav>
     <!-- Your header title and shopping cart button goes here  -->
     <main>
         <!-- The main content goes here creating by Javascript  -->
