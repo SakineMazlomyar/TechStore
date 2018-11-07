@@ -126,7 +126,6 @@ button:hover {
 }
 /* The end of log in site */
 
-<<<<<<< HEAD
 /* Register block */
 
 .register-button{
@@ -169,7 +168,6 @@ button:hover {
 }
 /* This is the end of the register block */
 
-=======
 /*Kundvagn site*/
 
 .divRow {
@@ -195,7 +193,6 @@ button:hover {
 }
 
 /*end of kundvagn*/
->>>>>>> 5c9439c678601837a43250112de37b9bcfc9d03f
 
 @media screen and (min-width: 350px){
     .widthtImg{
