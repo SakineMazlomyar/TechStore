@@ -11,9 +11,26 @@ h3{
     font-size: 2.5vw !important
 }
 
+<<<<<<< HEAD
+.divProduct {
+    margin: 1em;
+    padding: auto;
+}
+
+#right-div{
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+}
+
+.login-button{
+    background-color: #5596F5;
+    color: #fff;
+=======
 h4{
     font-size: 1vw !important;
     font-weight: 800 !important;
+>>>>>>> 7fce1abb0637b9a14f4156d79aaa5f2329a37ff1
 }
 
 .container {
