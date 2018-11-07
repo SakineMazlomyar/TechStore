@@ -73,14 +73,13 @@ function shoppingCartHeader() {
 
 function divProductRow() {
     AllProductsRow = document.createElement("div");
-    AllProductsRow.classList.add("d-flex", "width");
+    AllProductsRow.classList.add("container-fluid", "d-flex", "justify-content-around");
     return AllProductsRow;
 }
 
-
 function productDiv() {
     var oneProductDiv = document.createElement("div");
-    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "border", "border-primary");
+    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "border", "border-primary", "rounded", "divProduct");
     AllProductsRow.appendChild(oneProductDiv);
     return oneProductDiv;
 }
