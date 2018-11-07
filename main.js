@@ -143,6 +143,8 @@ window.onclick = function(event) {
     }
 }
 
+// Here comes the register form
+
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
