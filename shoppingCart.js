@@ -73,20 +73,20 @@ function shoppingCartHeader() {
 
 function divProductRow() {
     AllProductsRow = document.createElement("div");
-    AllProductsRow.classList.add("container-fluid", "d-flex");
+    AllProductsRow.classList.add("container", "d-flex", "divRow", "flex-wrap", "justify-content-center");
     return AllProductsRow;
 }
 
 function productDiv() {
     var oneProductDiv = document.createElement("div");
-    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "border", "border-primary", "rounded", "divProduct");
+    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "divProduct");
     AllProductsRow.appendChild(oneProductDiv);
     return oneProductDiv;
 }
 
 function imageProductInCart(productCartJson) {
     var imageProduct = document.createElement("img");
-    imageProduct.classList.add("widthtImg");
+    imageProduct.classList.add("wideImg");
     imageProduct.src = productCartJson.image;
     divForTheProducts.appendChild(imageProduct);
 }
@@ -112,7 +112,7 @@ function createDeleteButton(productCartJson) {
     var deleteButton = document.createElement("button");
     //deletebutton.innerHTML = '<i class="fas fa-trash-alt"></i>';
     deleteButton.innerText = "Ta bort";
-    deleteButton.classList.add("btn-danger", "btn-lg");
+    deleteButton.classList.add("btn-danger", "btn-lg", "buttonCart");
     deleteButton.onclick = function() { deleteButtonClick(productCartJson) };
     divForTheProducts.appendChild(deleteButton);
     return deleteButton;
