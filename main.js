@@ -143,5 +143,10 @@ function displayTheLoggedInUsername() {
     var loggedInUsername = localStorage.getItem("loggedInAs");
     if (!(loggedInUsername === "")) {
         loggedInUserDiv.innerText = "Hi, " + loggedInUsername + "!";
+        document.getElementById("logoutButton").style.display = "inline-block";
+        document.getElementById("loginButton").style.display = "none";
+    } else {
+        document.getElementById("logoutButton").style.display = "none";
+        document.getElementById("loginButton").style.display = "inline-block";
     }
 }
