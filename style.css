@@ -12,6 +12,11 @@ body{
     font-size: 3.7em;
 }
 
+.divProduct {
+    margin: 1em;
+    padding: auto;
+}
+
 #right-div{
     display: flex;
     flex-wrap: wrap;
