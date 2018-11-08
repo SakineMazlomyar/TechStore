@@ -38,24 +38,29 @@ function updateNumberOfChosenProducts() {
 function ProductsInKundvagnWebPage (productCartJson) {
     var divForHeader = document.createElement("div");
     var divForTheProductsInKundvagn = document.createElement("div");
+    var divForAllProductsRow = document.createElement("div");
     var productInCart = localStorage.getItem("shoppingCart");
     var productCartJson = JSON.parse(productInCart);
     
     divForHeader = shoppingCartHeader();
+    divForAllProductsRow = divProductRow();
+
 
  for(var i = 0; i < productCartJson.length; i++) {
         
-        divForTheProduct = productDiv();
+        divForTheProducts = productDiv();
         imageProductInCart(productCartJson[i]);
         titleProductInCart(productCartJson[i]);
         priceProductInCart(productCartJson[i]);
         createDeleteButton(productCartJson[i])
         
 
-
-        divForTheProductsInKundvagn.appendChild(divForTheProduct);
+        
+        divForAllProductsRow.appendChild(divForTheProducts)
+        //divForTheProductsInKundvagn.appendChild(divForTheProducts);
     }
 
+    divForTheProductsInKundvagn.appendChild(divForAllProductsRow);
     document.body.appendChild(divForHeader);
     document.body.appendChild(divForTheProductsInKundvagn);
 
@@ -69,25 +74,31 @@ function shoppingCartHeader() {
     return cartHeader;
 }
 
+function divProductRow() {
+    AllProductsRow = document.createElement("div");
+    AllProductsRow.classList.add("container", "d-flex", "divRow", "flex-wrap", "justify-content-center");
+    return AllProductsRow;
+}
 
 function productDiv() {
     var oneProductDiv = document.createElement("div");
-    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "width");
+    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "divProduct");
+    AllProductsRow.appendChild(oneProductDiv);
     return oneProductDiv;
 }
 
 function imageProductInCart(productCartJson) {
     var imageProduct = document.createElement("img");
-    imageProduct.classList.add("widthtImg");
+    imageProduct.classList.add("wideImg");
     imageProduct.src = productCartJson.image;
-    divForTheProduct.appendChild(imageProduct);
+    divForTheProducts.appendChild(imageProduct);
 }
 
 function titleProductInCart(productCartJson) {
     var titleProduct = document.createElement("h1");
     titleProduct.classList.add("font-weight-bold");
     titleProduct.innerText = productCartJson.title;
-    divForTheProduct.appendChild(titleProduct);
+    divForTheProducts.appendChild(titleProduct);
     return titleProduct;
 }
 
@@ -95,7 +106,7 @@ function priceProductInCart(productCartJson) {
     var priceProduct = document.createElement("h5");
     priceProduct.classList.add("font-weight-bold");
     priceProduct.innerText = productCartJson.price + "kr";
-    divForTheProduct.appendChild(priceProduct);
+    divForTheProducts.appendChild(priceProduct);
     return priceProduct;
 }
 
@@ -104,9 +115,9 @@ function createDeleteButton(productCartJson) {
     var deleteButton = document.createElement("button");
     //deletebutton.innerHTML = '<i class="fas fa-trash-alt"></i>';
     deleteButton.innerText = "Ta bort";
-    deleteButton.classList.add("btn-danger", "btn-lg");
+    deleteButton.classList.add("btn-danger", "btn-lg", "buttonCart");
     deleteButton.onclick = function() { deleteButtonClick(productCartJson) };
-    divForTheProduct.appendChild(deleteButton);
+    divForTheProducts.appendChild(deleteButton);
     return deleteButton;
 }
 

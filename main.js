@@ -1,4 +1,9 @@
 
+/* This is needed for see if somebody is logged in or not */
+if (!("loggedInAs" in localStorage)) {
+    localStorage.setItem("loggedInAs", "");
+}
+
 /** Get products from the json file and store it in a gobal variable */
 var listOfProducts;
 
@@ -20,6 +25,7 @@ function initSite() {
     loadProducts();
     updateNumberOfChosenProducts(); // Here we call the function to which we count the number of chosen products
     // This would also be a good place to initialize other parts of the UI
+    displayTheLoggedInUsername();
 }
 
 function initShoppingCart() {
@@ -33,7 +39,7 @@ function initShoppingCart() {
 function addProductsToWebpage(listOfProducts) {
     // We create a div and put all products inside it
     var divForThePictures = document.createElement("div");
-    //divForThePictures.classList.add("position-relative", "container")
+    divForThePictures.classList.add("container")
 
     // We loop threw every single product
     for(var i = 0; i < listOfProducts.length; i++) {
@@ -53,15 +59,15 @@ function addProductsToWebpage(listOfProducts) {
 function createProductDiv() {
     // we make a div for every property and call it from addProductToWebPage
     var addingSingleProduct = document.createElement("div");
-    addingSingleProduct.classList.add("d-flex", "flex-column", "height", "align-items-center", "pt-5");
+    addingSingleProduct.classList.add("d-flex", "flex-column", "align-items-center", "pt-5");
     return addingSingleProduct;
 }
 
 // Here comes the creating of the elements in separated functions
 
-// Creating h3 elements for the names of the products
+// Creating h2 elements for the names of the products
 function createProductName(listOfProducts) {
-    var productName = document.createElement("h4");
+    var productName = document.createElement("h2");
     productName.innerText = listOfProducts.title;
     divForTheProduct.appendChild(productName)
     return productName;
@@ -78,7 +84,7 @@ function createProductImage(listOfProducts) {
 
 // Creating h3 elements to add prices of the products
 function createProductPrice(listOfProducts) {
-    var productPrice = document.createElement("h4");
+    var productPrice = document.createElement("h3");
     productPrice.innerText = listOfProducts.price +"kr";
     divForTheProduct.appendChild(productPrice)
     return productPrice;
@@ -86,9 +92,9 @@ function createProductPrice(listOfProducts) {
 
 // Creating the descriptions of the products
 function createProductDescription(listOfProducts) {
-    var productDescription = document.createElement("h6");
+    var productDescription = document.createElement("h4");
     productDescription.innerText = listOfProducts.description;
-    productDescription.classList.add("text-center", "font-weight-bold");
+    productDescription.classList.add("text-center",);
     divForTheProduct.appendChild(productDescription)
     return productDescription;
 }
@@ -130,13 +136,15 @@ function updateNumberOfChosenProducts() {
    
 }
 
-
-// Get the modal
-var modal = document.getElementById('register');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+function displayTheLoggedInUsername() {
+    var loggedInUserDiv = document.getElementById('loggedInUsernameDiv');
+    var loggedInUsername = localStorage.getItem("loggedInAs");
+    if (!(loggedInUsername === "")) {
+        loggedInUserDiv.innerText = "Hi, " + loggedInUsername + "!";
+        document.getElementById("logoutButton").style.display = "inline-block";
+        document.getElementById("loginButton").style.display = "none";
+    } else {
+        document.getElementById("logoutButton").style.display = "none";
+        document.getElementById("loginButton").style.display = "inline-block";
     }
 }
