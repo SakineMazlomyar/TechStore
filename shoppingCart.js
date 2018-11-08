@@ -7,7 +7,7 @@ function initShoppingCart() {
     }
     var productInCart = localStorage.getItem("shoppingCart");
     var productCartList = JSON.parse(productInCart);
-    document.body.innerHTML = "";
+    //document.body.innerHTML = "";
     ProductsInKundvagnWebPage(productCartList);
     updateNumberOfChosenProducts();
 }
@@ -24,6 +24,8 @@ function ProductsInKundvagnWebPage (productCartList) {
     var divForHeader = document.createElement("div");
     var divForTheProductCartList = document.createElement("div");
     var divForAllProductsInRow = document.createElement("div");
+    var mainDivInBody = document.getElementsByTagName("main");
+
     
     divForHeader = shoppingCartHeader();
     divForAllProductsInRow = divProductRow();
@@ -42,10 +44,12 @@ function ProductsInKundvagnWebPage (productCartList) {
         //document.body.replaceChild(JsonToDelete, divForTheProducts);
         //divForTheProductsInKundvagn.appendChild(divForTheProducts);
     }
+    
 
     divForTheProductCartList.appendChild(divForAllProductsInRow);
-    //document.body.innerHTML = "";
+    mainDivInBody.innerHTML = "";
     document.body.appendChild(divForHeader);
+    //document.body.replaceChild(divForTheProductCartList);
     document.body.appendChild(divForTheProductCartList);
 
 }
