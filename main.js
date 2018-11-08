@@ -119,8 +119,7 @@ function onShoppingProductButtonClick(listOfProducts) {
     //Byt Namn? (shoppingCartJson)
     var shoppingCartJson = JSON.parse(shoppingCartString);
 
-    // Add a property to the object to distinguish mobiles of the same brand
-    //Add an unique IdNr
+    // Add a property to the object to distinguish mobiles of the same brand = IdNr.
 	var date = new Date();
 	var timeStamp = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + ":" + date.getMilliseconds();	
 	listOfProducts["IdNr"] = timeStamp;
