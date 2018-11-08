@@ -141,7 +141,8 @@ function countTotalPrice(){
     }); 
 
     var divForTotalPrice = document.createElement("div");
-    var h1 = document.createElement("h4")
+    divForTotalPrice.classList.add("text-center")
+    var h1 = document.createElement("h1")
     h1.innerText = "Totalt Pris: " + totalPrice + "kr";
     divForTotalPrice.appendChild(h1);
     document.body.appendChild(divForTotalPrice)
