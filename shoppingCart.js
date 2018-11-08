@@ -1,16 +1,3 @@
-var listOfProducts;
-var productCartJson;
-
-function loadProducts() {
-    fetch("./products.json")
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(products) {
-        listOfProducts = products;
-        addProductsToWebpage(listOfProducts);
-    });
-}
 
 
 function initShoppingCart() {
@@ -19,9 +6,9 @@ function initShoppingCart() {
         localStorage.setItem("shoppingCart", "[]");
     }
     var productInCart = localStorage.getItem("shoppingCart");
-    productCartJson = JSON.parse(productInCart);
-
-    ProductsInKundvagnWebPage(listOfProducts);
+    var productCartList = JSON.parse(productInCart);
+    document.body.innerHTML = "";
+    ProductsInKundvagnWebPage(productCartList);
     updateNumberOfChosenProducts();
 }
 
@@ -33,33 +20,33 @@ function updateNumberOfChosenProducts() {
     productNumberIndicator.innerText = shoppingCartJson.length;
 }
 
-function ProductsInKundvagnWebPage (productCartJson) {
+function ProductsInKundvagnWebPage (productCartList) {
     var divForHeader = document.createElement("div");
-    var divForTheProductsInKundvagn = document.createElement("div");
-    var divForAllProductsRow = document.createElement("div");
-    var productInCart = localStorage.getItem("shoppingCart");
-    var productCartJson = JSON.parse(productInCart);
+    var divForTheProductCartList = document.createElement("div");
+    var divForAllProductsInRow = document.createElement("div");
     
     divForHeader = shoppingCartHeader();
-    divForAllProductsRow = divProductRow();
+    divForAllProductsInRow = divProductRow();
 
 
- for(var i = 0; i < productCartJson.length; i++) {
+    for(var i = 0; i < productCartList.length; i++) {
         
-        divForTheProducts = productDiv();
-        imageProductInCart(productCartJson[i]);
-        titleProductInCart(productCartJson[i]);
-        priceProductInCart(productCartJson[i]);
-        createDeleteButton(productCartJson[i])
+        divForSingleProduct = productDiv();
+        createImageFromProductList(productCartList[i]);
+        createTitleFromProductList(productCartList[i]);
+        createPriceFromProductList(productCartList[i]);
+        createDeleteButton(productCartList[i]);
 
         
-        divForAllProductsRow.appendChild(divForTheProducts)
+        divForAllProductsInRow.appendChild(divForSingleProduct)
+        //document.body.replaceChild(JsonToDelete, divForTheProducts);
         //divForTheProductsInKundvagn.appendChild(divForTheProducts);
     }
 
-    divForTheProductsInKundvagn.appendChild(divForAllProductsRow);
+    divForTheProductCartList.appendChild(divForAllProductsInRow);
+    //document.body.innerHTML = "";
     document.body.appendChild(divForHeader);
-    document.body.appendChild(divForTheProductsInKundvagn);
+    document.body.appendChild(divForTheProductCartList);
 
 }
 
@@ -84,55 +71,65 @@ function productDiv() {
     return oneProductDiv;
 }
 
-function imageProductInCart(productCartJson) {
+function createImageFromProductList(productCartList) {
     var imageProduct = document.createElement("img");
     imageProduct.classList.add("wideImg");
-    imageProduct.src = productCartJson.image;
-    divForTheProducts.appendChild(imageProduct);
+    imageProduct.src = productCartList.image;
+    divForSingleProduct.appendChild(imageProduct);
 }
 
-function titleProductInCart(productCartJson) {
+function createTitleFromProductList(productCartList) {
     var titleProduct = document.createElement("h1");
     titleProduct.classList.add("font-weight-bold");
-    titleProduct.innerText = productCartJson.title;
-    divForTheProducts.appendChild(titleProduct);
+    titleProduct.innerText = productCartList.title;
+    divForSingleProduct.appendChild(titleProduct);
     return titleProduct;
 }
 
-function priceProductInCart(productCartJson) {
+function createPriceFromProductList(productCartList) {
     var priceProduct = document.createElement("h5");
     priceProduct.classList.add("font-weight-bold");
-    priceProduct.innerText = productCartJson.price + "kr";
-    divForTheProducts.appendChild(priceProduct);
+    priceProduct.innerText = productCartList.price + "kr";
+    divForSingleProduct.appendChild(priceProduct);
     return priceProduct;
 }
 
 //create delete button here
-function createDeleteButton(productCartJson) {
+function createDeleteButton(productCartList) {
     var deleteButton = document.createElement("button");
     //deletebutton.innerHTML = '<i class="fas fa-trash-alt"></i>';
     deleteButton.innerText = "Ta bort";
     deleteButton.classList.add("btn-danger", "btn-lg", "buttonCart");
-    deleteButton.onclick = function() { deleteButtonClick(productCartJson) };
-    divForTheProducts.appendChild(deleteButton);
+    deleteButton.onclick = function() { deleteButtonClick(productCartList) };
+    divForSingleProduct.appendChild(deleteButton);
     return deleteButton;
 }
 
 //create delete function here
-function deleteButtonClick(productCartJson) {
+function deleteButtonClick(productCartList) {
 
     var ItemToDelete = localStorage.getItem("shoppingCart");
-    var JsonToDelete = JSON.parse(ItemToDelete);
+    var deleteProduct = JSON.parse(ItemToDelete);
     var index = 0;
+    
 
-    for(var i = 0; i < JsonToDelete.length; i++) {
-        if(productCartJson.IdNr == JsonToDelete[i].IdNr) {
+    for(var i = 0; i < deleteProduct.length; i++) {
+        if(productCartList.IdNr == deleteProduct[i].IdNr) {
             index = i;
         }
     };
     
-    JsonToDelete.splice(index, 1);
-    localStorage.setItem("shoppingCart", JSON.stringify(JsonToDelete));
+    deleteProduct.splice(index, 1);
+    localStorage.setItem("shoppingCart", JSON.stringify(deleteProduct));
+    
+    
     updateNumberOfChosenProducts();
-    location.reload(false);
+    initShoppingCart();
+    
+    // rensa shoppingCart och uppdatera append
+   // location.reload(false);
 };
+
+/*function reloadShoppingCart(divForTheProducts) {
+    document.body.replaceChild(divForTheProducts)
+}*/
