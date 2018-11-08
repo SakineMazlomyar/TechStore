@@ -41,16 +41,16 @@ function ProductsInKundvagnWebPage (productCartJson) {
 
         
         divForAllProductsRow.appendChild(divForTheProducts)
-        divForTheProductsInKundvagn.appendChild(divForTheProducts);
+        
     }
 
+    document.body.appendChild(divForHeader);
     divForTheProductsInKundvagn.appendChild(divForAllProductsRow);
     var main = document.querySelector("main");
     main.innerHTML = ""
-    main.style.height = "40em"
+    
     main.appendChild(divForTheProductsInKundvagn)
 
-    document.body.appendChild(divForHeader);
 }
 
 
@@ -126,6 +126,7 @@ function deleteButtonClick(productCartJson) {
     localStorage.setItem("shoppingCart", JSON.stringify(JsonToDelete));
     updateNumberOfChosenProducts();
     ProductsInKundvagnWebPage(productCartJson);
+    countTotalPrice()
    
    
 };
