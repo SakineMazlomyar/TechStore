@@ -1,17 +1,3 @@
-var listOfProducts;
-var productCartJson;
-
-function loadProducts() {
-    fetch("./products.json")
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(products) {
-        listOfProducts = products;
-        addProductsToWebpage(listOfProducts);
-    });
-}
-
 
 function initShoppingCart() {
     
@@ -19,9 +5,9 @@ function initShoppingCart() {
         localStorage.setItem("shoppingCart", "[]");
     }
     var productInCart = localStorage.getItem("shoppingCart");
-    productCartJson = JSON.parse(productInCart);
+    var productCartJson = JSON.parse(productInCart);
 
-    ProductsInKundvagnWebPage(listOfProducts);
+    ProductsInKundvagnWebPage(productCartJson);
     updateNumberOfChosenProducts();
     countTotalPrice()
 }
@@ -41,11 +27,9 @@ function ProductsInKundvagnWebPage (productCartJson) {
     var divForAllProductsRow = document.createElement("div");
     var productInCart = localStorage.getItem("shoppingCart");
     var productCartJson = JSON.parse(productInCart);
-    
-    divForHeader = shoppingCartHeader();
+
+    //divForHeader = shoppingCartHeader();
     divForAllProductsRow = divProductRow();
-
-
  for(var i = 0; i < productCartJson.length; i++) {
         
         divForTheProducts = productDiv();
@@ -57,14 +41,19 @@ function ProductsInKundvagnWebPage (productCartJson) {
 
         
         divForAllProductsRow.appendChild(divForTheProducts)
-        //divForTheProductsInKundvagn.appendChild(divForTheProducts);
+        divForTheProductsInKundvagn.appendChild(divForTheProducts);
     }
 
     divForTheProductsInKundvagn.appendChild(divForAllProductsRow);
+    var main = document.querySelector("main");
+    main.innerHTML = ""
+    main.style.height = "5em"
+    main.appendChild(divForTheProductsInKundvagn)
+    console.log(main)
+    
     document.body.appendChild(divForHeader);
-    document.body.appendChild(divForTheProductsInKundvagn);
-
 }
+
 
 //Header for "kundvagn.html"
 function shoppingCartHeader() {
@@ -137,7 +126,9 @@ function deleteButtonClick(productCartJson) {
     JsonToDelete.splice(index, 1);
     localStorage.setItem("shoppingCart", JSON.stringify(JsonToDelete));
     updateNumberOfChosenProducts();
-    location.reload(false);
+    ProductsInKundvagnWebPage(productCartJson);
+   
+   
 };
 
 function countTotalPrice(){
@@ -159,5 +150,3 @@ function countTotalPrice(){
     document.body.appendChild(divForTotalPrice)
 
 }
-/* test */
-/* test again for branch */
