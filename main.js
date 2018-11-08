@@ -37,9 +37,6 @@ function initShoppingCart() {
 
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage(listOfProducts) {
-
-    // Check your console to see that the products are stored in the listOfProducts varible.
-
     // We create a div and put all products inside it
     var divForThePictures = document.createElement("div");
     divForThePictures.classList.add("container")
@@ -135,6 +132,7 @@ function updateNumberOfChosenProducts() {
     var shoppingCartString = localStorage.getItem("shoppingCart");
     var shoppingCartJson = JSON.parse(shoppingCartString);
     productNumberIndicator.innerText = shoppingCartJson.length;
+   
 }
 
 function displayTheLoggedInUsername() {
