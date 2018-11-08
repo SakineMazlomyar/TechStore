@@ -7,11 +7,8 @@ function initShoppingCart() {
     var productCartList = JSON.parse(productInCart);
     
     updateNumberOfChosenProducts();
-<<<<<<< HEAD
     ProductsInKundvagnWebPage(productCartList);
-=======
     countTotalPrice()
->>>>>>> d760a14e7bf1b132e907065a14097b86c74dda1c
 }
 
 // Update the indicator in the navigation bar
@@ -34,20 +31,11 @@ function ProductsInKundvagnWebPage (productCartList) {
 
     for(var i = 0; i < productCartList.length; i++) {
         
-<<<<<<< HEAD
         divForSingleProduct = productDiv();
         createImageFromProductList(productCartList[i]);
         createTitleFromProductList(productCartList[i]);
         createPriceFromProductList(productCartList[i]);
         createDeleteButton(productCartList[i]);
-=======
-        divForTheProducts = productDiv();
-        imageProductInCart(productCartJson[i]);
-        titleProductInCart(productCartJson[i]);
-        priceProductInCart(productCartJson[i]);
-        createDeleteButton(productCartJson[i])
-        
->>>>>>> d760a14e7bf1b132e907065a14097b86c74dda1c
 
         divForAllProductsInRow.appendChild(divForSingleProduct)
         
@@ -138,8 +126,6 @@ function deleteButtonClick(productCartList) {
     
 };
 
-<<<<<<< HEAD
-=======
 function countTotalPrice(){
     /* we get the string array from localstorage and parse it to js array
     we get the price of each obj and sum them and pun in body
@@ -159,4 +145,3 @@ function countTotalPrice(){
     document.body.appendChild(divForTotalPrice)
 
 }
->>>>>>> d760a14e7bf1b132e907065a14097b86c74dda1c
