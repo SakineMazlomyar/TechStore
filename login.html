@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <script src="./main.js"></script>
+    <script src="./login.js"></script>
 </head>
 
 <body>
@@ -23,52 +24,51 @@
     <main class="login-main">
 
         <!-- Log in form  -->
-            <h2>Log in to your TechStore account</h2>
+        <h2>Log in to your TechStore account</h2>
 
-            <form class="login-form">
-              <div class="avatar-container">
+        <form class="login-form">
+            <div class="avatar-container">
                 <img src="images/avatar.png" alt="Avatar" class="avatar">
-              </div>
-            
-              <div class="login-container">
+            </div>
+
+            <div class="login-container">
                 <label for="uname" class="login-labels"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-            
+                <input id="loginUsername" type="text" placeholder="Enter Username" name="uname" required>
+
                 <label for="psw" class="login-labels"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                    
-                <button type="submit" class="login-button">Login</button>
-              </div>
-            
-              <div class="login-bottom-container" style="background-color:#f1f1f1">
+                <input id="loginPassword" type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="login-button" onclick="loginToThePage()">Login</button>
+            </div>
+
+            <div class="login-bottom-container" style="background-color:#f1f1f1">
                 <button type="button" class="cancelbtn">Cancel</button>
                 <button class="register-button" onclick="document.getElementById('id01').style.display='block'">Register</button>
-              </div>
+            </div>
+        </form>
+
+        <!-- Register form  -->
+        <div id="id01" class="modal">
+            <form class="modal-content animate register-form">
+                <div class="register-avatar-container">
+                    <img src="images/avatar.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="register-container">
+                    <label for="uname" class="login-labels"><b>Username</b></label>
+                    <input id="registerUsername" type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw" class="login-labels"><b>Password</b></label>
+                    <input id="registerPassword" type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button class="blue-register-button" onclick="registerUser()">Register</button>
+
+                    <div class="register-bottom-container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    </div>
+                </div>
             </form>
-
-  <!-- Register form  -->
-  <div id="id01" class="modal">
-  <form class="modal-content animate register-form">
-        <div class="register-avatar-container">
-            <img src="images/avatar.png" alt="Avatar" class="avatar">
         </div>
-
-    <div class="register-container">
-        <label for="uname" class="login-labels"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-    
-        <label for="psw" class="login-labels"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-    
-      <button type="submit" class="blue-register-button">Register</button>
-      <div class="register-bottom-container" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          </div>
-    </div>
-
-
-  </form>
-</div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

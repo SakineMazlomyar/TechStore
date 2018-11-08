@@ -1,4 +1,9 @@
 
+/* This is needed for see if somebody is logged in or not */
+if (!("loggedInAs" in localStorage)) {
+    localStorage.setItem("loggedInAs", "");
+}
+
 /** Get products from the json file and store it in a gobal variable */
 var listOfProducts;
 
@@ -20,6 +25,7 @@ function initSite() {
     loadProducts();
     updateNumberOfChosenProducts(); // Here we call the function to which we count the number of chosen products
     // This would also be a good place to initialize other parts of the UI
+    displayTheLoggedInUsername();
 }
 
 function initShoppingCart() {
@@ -132,22 +138,15 @@ function updateNumberOfChosenProducts() {
     productNumberIndicator.innerText = shoppingCartJson.length;
 }
 
-
-// Get the modal
-var modal = document.getElementById('register');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+function displayTheLoggedInUsername() {
+    var loggedInUserDiv = document.getElementById('loggedInUsernameDiv');
+    var loggedInUsername = localStorage.getItem("loggedInAs");
+    if (!(loggedInUsername === "")) {
+        loggedInUserDiv.innerText = "Hi, " + loggedInUsername + "!";
+        document.getElementById("logoutButton").style.display = "inline-block";
+        document.getElementById("loginButton").style.display = "none";
+    } else {
+        document.getElementById("logoutButton").style.display = "none";
+        document.getElementById("loginButton").style.display = "inline-block";
     }
 }
