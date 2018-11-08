@@ -1,5 +1,3 @@
-
-
 function initShoppingCart() {
     
     if (!("shoppingCart" in localStorage)) {
@@ -7,9 +5,9 @@ function initShoppingCart() {
     }
     var productInCart = localStorage.getItem("shoppingCart");
     var productCartList = JSON.parse(productInCart);
-    //document.body.innerHTML = "";
-    ProductsInKundvagnWebPage(productCartList);
+    
     updateNumberOfChosenProducts();
+    ProductsInKundvagnWebPage(productCartList);
 }
 
 // Update the indicator in the navigation bar
@@ -21,15 +19,13 @@ function updateNumberOfChosenProducts() {
 }
 
 function ProductsInKundvagnWebPage (productCartList) {
-    var divForHeader = document.createElement("div");
+    var divForHeader;
     var divForTheProductCartList = document.createElement("div");
     var divForAllProductsInRow = document.createElement("div");
-    var mainDivInBody = document.getElementsByTagName("main");
-
+    var mainStuff = document.getElementById("mainContent");
     
     divForHeader = shoppingCartHeader();
     divForAllProductsInRow = divProductRow();
-
 
     for(var i = 0; i < productCartList.length; i++) {
         
@@ -39,19 +35,14 @@ function ProductsInKundvagnWebPage (productCartList) {
         createPriceFromProductList(productCartList[i]);
         createDeleteButton(productCartList[i]);
 
-        
         divForAllProductsInRow.appendChild(divForSingleProduct)
-        //document.body.replaceChild(JsonToDelete, divForTheProducts);
-        //divForTheProductsInKundvagn.appendChild(divForTheProducts);
+        
     }
-    
-
     divForTheProductCartList.appendChild(divForAllProductsInRow);
-    mainDivInBody.innerHTML = "";
-    document.body.appendChild(divForHeader);
-    //document.body.replaceChild(divForTheProductCartList);
-    document.body.appendChild(divForTheProductCartList);
-
+   
+    //add header and all products to main.
+    mainStuff.appendChild(divForHeader);
+    mainStuff.appendChild(divForAllProductsInRow);
 }
 
 //Header for "kundvagn.html"
@@ -125,15 +116,11 @@ function deleteButtonClick(productCartList) {
     
     deleteProduct.splice(index, 1);
     localStorage.setItem("shoppingCart", JSON.stringify(deleteProduct));
-    
-    
-    updateNumberOfChosenProducts();
+ 
+    // clear content in main.
+    document.getElementById("mainContent").innerHTML = "";
+    //reload shoppingcart
     initShoppingCart();
     
-    // rensa shoppingCart och uppdatera append
-   // location.reload(false);
 };
 
-/*function reloadShoppingCart(divForTheProducts) {
-    document.body.replaceChild(divForTheProducts)
-}*/
