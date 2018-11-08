@@ -23,7 +23,7 @@ function initShoppingCart() {
 
     ProductsInKundvagnWebPage(listOfProducts);
     updateNumberOfChosenProducts();
-    totalPrice()
+    countTotalPrice()
 }
 
 // Update the indicator in the navigation bar
@@ -129,43 +129,21 @@ function deleteButtonClick(productCartJson) {
     location.reload(false);
 };
 
-function totalPrice(){
-    var singlePrice = []
-    var value = 0;
+function countTotalPrice(){
+    /* we get the string array from localstorage and parse it to js array
+    we get the price of each obj and sum them and pun in body
+     */
+    var totalPrice = 0;
     var choosenProducts = localStorage.getItem("shoppingCart");
     var choosenProductsToArray = JSON.parse(choosenProducts);
     choosenProductsToArray.forEach(function(product){
-        value += product.price;
-        singlePrice.push(value)
-    })
-    console.log(value)
-    //for(var i = 0; i<singlePrice.length; i++){
-       /*  for(var j = 0; j<singlePrice.length -1; j++){ */
-/*             var sum = singlePrice[i]
-            console.log(singlePrice[i] + singlePrice[i + 1]);
-            singlePrice[i +1] = sum;
-            break
-        
-        } */
-        
-    
-    
-   
-    
-    
-    /* we get the length of our converted array 
-    and multiply with amount of phones and insert on body
-     */
-/*     if(choosenProductsToArray.length >= 1){
-        var totalPrice = value*choosenProductsToArray.length
-        var divForTotalPrice = document.createElement("div");
-        divForTotalPrice.classList.add("bg")
-        var h1 = document.createElement("h4")
-        h1.innerText = "Totalt Pris: " + totalPrice + "kr";
-        divForTotalPrice.appendChild(h1)
-        document.body.appendChild(divForTotalPrice)
-        
+        totalPrice += product.price;
+    }); 
 
-    } */
+    var divForTotalPrice = document.createElement("div");
+    var h1 = document.createElement("h4")
+    h1.innerText = "Totalt Pris: " + totalPrice + "kr";
+    divForTotalPrice.appendChild(h1);
+    document.body.appendChild(divForTotalPrice)
 
 }
