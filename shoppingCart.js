@@ -159,3 +159,5 @@ function countTotalPrice(){
     document.body.appendChild(divForTotalPrice)
 
 }
+/* test */
+/* test again for branch */
