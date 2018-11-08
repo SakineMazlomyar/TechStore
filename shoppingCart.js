@@ -47,10 +47,9 @@ function ProductsInKundvagnWebPage (productCartJson) {
     divForTheProductsInKundvagn.appendChild(divForAllProductsRow);
     var main = document.querySelector("main");
     main.innerHTML = ""
-    main.style.height = "5em"
+    main.style.height = "40em"
     main.appendChild(divForTheProductsInKundvagn)
-    console.log(main)
-    
+
     document.body.appendChild(divForHeader);
 }
 
