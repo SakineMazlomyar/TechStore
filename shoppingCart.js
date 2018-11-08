@@ -109,7 +109,6 @@ function deleteButtonClick(productCartList) {
     var deleteProduct = JSON.parse(ItemToDelete);
     var index = 0;
     
-
     for(var i = 0; i < deleteProduct.length; i++) {
         if(productCartList.IdNr == deleteProduct[i].IdNr) {
             index = i;
