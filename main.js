@@ -87,7 +87,6 @@ function createProductPrice(listOfProducts) {
     var productPrice = document.createElement("h3");
     productPrice.innerText = listOfProducts.price +"kr";
     divForTheProduct.appendChild(productPrice)
-    return productPrice;
 }
 
 // Creating the descriptions of the products
@@ -96,18 +95,18 @@ function createProductDescription(listOfProducts) {
     productDescription.innerText = listOfProducts.description;
     productDescription.classList.add("text-center",);
     divForTheProduct.appendChild(productDescription)
-    return productDescription;
 }
 
 // Creating shopping button here
 function createShoppingButton(listOfProducts) { 
     var shoppingProductButton = document.createElement("button");
     shoppingProductButton.innerText = "Lägg till i kundvagnen";
+    shoppingProductButton.innerHTML = '<i class="fas fa-cart-arrow-down own-fa-cart-arrow-down"></i>';
+
     shoppingProductButton.classList.add("btn-primary", "btn-sm");
     shoppingProductButton.onclick = function() { onShoppingProductButtonClick(listOfProducts); };
-    divForTheProduct.appendChild(shoppingProductButton)
-    return shoppingProductButton;
-} 
+    divForTheProduct.appendChild(shoppingProductButton);
+}
 
 // Handle shoppingProductButton
 function onShoppingProductButtonClick(listOfProducts) {
