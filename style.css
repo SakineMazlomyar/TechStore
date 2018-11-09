@@ -54,6 +54,10 @@ h3{
     padding: 0 !important;
 }
 
+button span{
+    margin: 0.4em;
+}
+
 .shopping-button{
     background-color: #5596F5;
     color: #fff;

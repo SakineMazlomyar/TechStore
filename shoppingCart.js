@@ -96,8 +96,13 @@ function createPriceFromProductList(productCartList) {
 //create delete button here
 function createDeleteButton(productCartList) {
     var deleteButton = document.createElement("button");
-    //deletebutton.innerHTML = '<i class="fas fa-trash-alt"></i>';
-    deleteButton.innerText = "Ta bort";
+
+    var spanForDeleteButtonText = document.createElement("span");
+    var spanForDeleteButtonIcon = document.createElement("span");
+    deleteButton.appendChild(spanForDeleteButtonIcon);
+    deleteButton.appendChild(spanForDeleteButtonText);
+    spanForDeleteButtonIcon.innerHTML = '<i class="far fa-trash-alt"></i>';
+    spanForDeleteButtonText.innerText = "Ta bort";
     deleteButton.classList.add("btn-danger", "btn-lg", "buttonCart");
     deleteButton.onclick = function() { deleteButtonClick(productCartList) };
     divForSingleProduct.appendChild(deleteButton);
