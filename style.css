@@ -5,10 +5,6 @@ body{
     color: #212121 !important;
 }
 
-main{
-    padding: 2em;
-}
-
 h1{
     font-size: 2vw !important;
 }
@@ -283,6 +279,18 @@ h1 i{
      .login-form{
          margin-top: 0.5em;
      }
+}
+
+@media screen and (max-width: 450px){
+    .divProduct{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 790px){
+    .divProduct{
+        width: 40%;
+    }
 }
 
 @media screen and (min-width: 1300px){
