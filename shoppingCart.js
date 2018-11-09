@@ -52,14 +52,17 @@ function ProductsInKundvagnWebPage (productCartList) {
 //Header for "kundvagn.html"
 function shoppingCartHeader() {
     var cartHeader = document.createElement("div");
+    var cartTitle = document.createElement("h1");
     cartHeader.classList.add("container", "text-center", "font-weight-bold");
-    cartHeader.innerHTML = '<i class="fas fa-shopping-cart"></i> ' + "Kundvagn";
+    cartTitle.innerHTML = '<i class="fas fa-shopping-cart"></i>' + "Kundvagn";
+    cartTitle.classList.add("h1-kundvagn");
+    cartHeader.appendChild(cartTitle);
     return cartHeader;
 }
 
 function divProductRow() {
     AllProductsRow = document.createElement("div");
-    AllProductsRow.classList.add("container", "d-flex", "divRow", "flex-wrap", "justify-content-center");
+    AllProductsRow.classList.add("container", "d-flex", "flex-wrap", "justify-content-center");
     return AllProductsRow;
 }
 
