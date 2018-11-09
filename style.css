@@ -58,6 +58,8 @@ h3{
     background-color: #5596F5;
     color: #fff;
     border: none;
+    padding: 0.5em !important;
+    border-radius: 0.5em !important;
 }
 
 /* Log in site */
