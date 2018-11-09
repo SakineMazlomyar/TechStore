@@ -59,7 +59,7 @@ function addProductsToWebpage(listOfProducts) {
 function createProductDiv() {
     // we make a div for every property and call it from addProductToWebPage
     var addingSingleProduct = document.createElement("div");
-    addingSingleProduct.classList.add("d-flex", "flex-column", "align-items-center", "pt-5");
+    addingSingleProduct.classList.add("d-flex", "flex-column", "align-items-center", "pt-5", "backgroundOdd");
     return addingSingleProduct;
 }
 
@@ -81,6 +81,7 @@ function createProductImage(listOfProducts) {
     divForTheProduct.appendChild(productImg)
     return productImg;
 }
+
 
 // Creating h3 elements to add prices of the products
 function createProductPrice(listOfProducts) {
