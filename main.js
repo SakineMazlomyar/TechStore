@@ -100,9 +100,12 @@ function createProductDescription(listOfProducts) {
 // Creating shopping button here
 function createShoppingButton(listOfProducts) { 
     var shoppingProductButton = document.createElement("button");
-    shoppingProductButton.innerText = "Lägg till i kundvagnen";
-    shoppingProductButton.innerHTML = '<i class="fas fa-cart-arrow-down own-fa-cart-arrow-down"></i>';
-
+    var spanForButtonText = document.createElement("span");
+    var spanForButtonIcon = document.createElement("span");
+    shoppingProductButton.appendChild(spanForButtonIcon);
+    shoppingProductButton.appendChild(spanForButtonText);
+    spanForButtonIcon.innerHTML = '<i class="fas fa-cart-arrow-down own-fa-cart-arrow-down"></i>';
+    spanForButtonText.innerText = "Lägg till i kundvagnen";
     shoppingProductButton.classList.add("btn-primary", "btn-sm");
     shoppingProductButton.onclick = function() { onShoppingProductButtonClick(listOfProducts); };
     divForTheProduct.appendChild(shoppingProductButton);
