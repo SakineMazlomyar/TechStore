@@ -60,6 +60,7 @@ function loginToThePage() {
     if (userAlreadyExists(loginUsername)) {
         if (usernameMatchesPassword(loginUsername, loginPassword)){
             localStorage.setItem("loggedInAs", loginUsername);
+            window.location = "index.html";
         } else {
             alert("Wrong password!");
         }

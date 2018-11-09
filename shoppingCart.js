@@ -9,6 +9,7 @@ function initShoppingCart() {
     updateNumberOfChosenProducts();
     ProductsInKundvagnWebPage(productCartList);
     countTotalPrice()
+   
 }
 
 // Update the indicator in the navigation bar
@@ -36,6 +37,7 @@ function ProductsInKundvagnWebPage (productCartList) {
         createTitleFromProductList(productCartList[i]);
         createPriceFromProductList(productCartList[i]);
         createDeleteButton(productCartList[i]);
+        
 
         divForAllProductsInRow.appendChild(divForSingleProduct)
         
@@ -94,8 +96,13 @@ function createPriceFromProductList(productCartList) {
 //create delete button here
 function createDeleteButton(productCartList) {
     var deleteButton = document.createElement("button");
-    //deletebutton.innerHTML = '<i class="fas fa-trash-alt"></i>';
-    deleteButton.innerText = "Ta bort";
+
+    var spanForDeleteButtonText = document.createElement("span");
+    var spanForDeleteButtonIcon = document.createElement("span");
+    deleteButton.appendChild(spanForDeleteButtonIcon);
+    deleteButton.appendChild(spanForDeleteButtonText);
+    spanForDeleteButtonIcon.innerHTML = '<i class="far fa-trash-alt"></i>';
+    spanForDeleteButtonText.innerText = "Ta bort";
     deleteButton.classList.add("btn-danger", "btn-lg", "buttonCart");
     deleteButton.onclick = function() { deleteButtonClick(productCartList) };
     divForSingleProduct.appendChild(deleteButton);
@@ -122,6 +129,7 @@ function deleteButtonClick(productCartList) {
     document.getElementById("mainContent").innerHTML = "";
     //reload shoppingcart
     initShoppingCart();
+   
     
 };
 
@@ -141,6 +149,8 @@ function countTotalPrice(){
     var h1 = document.createElement("h1")
     h1.innerText = "Totalt Pris: " + totalPrice + "kr";
     divForTotalPrice.appendChild(h1);
-    document.body.appendChild(divForTotalPrice)
+    var main = document.getElementById("mainContent");
+    main.appendChild(divForTotalPrice)
+    return divForTotalPrice
 
 }
