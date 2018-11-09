@@ -1,7 +1,7 @@
 
 body{
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     color: #212121 !important;
 }
 
@@ -20,7 +20,7 @@ h3{
 h4 {
     font-size: 3.5vw !important;
     
-    font-size: 3vw !important;  
+    /*font-size: 3vw !important;  */
 }
 
 h2, h3, h4 {
@@ -47,8 +47,13 @@ h2, h3, h4 {
     padding-bottom: 1.3em !important;
 }
 
+.navbar {
+    margin:0 !important;
+}
+
 .container-fluid {
-    margin-bottom: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
     height: auto;
     font-size: 3.7em;
 }
@@ -319,31 +324,33 @@ h1 i{
     h2{
         font-size: 2.8vw !important;
         padding-top: 0.5em;
+        font-weight: 625 !important;
     }
     
     h3{
-        font-size: 1.4vw !important
-    
+        font-size: 1.2vw !important
     }
     
     h4 {
-        font-size: 1.4vw !important;   
+        font-size: 1.4vw !important;
+        font-weight: 600 !important;   
+        padding-top: 0.5em;
     }
     
     .shopping-button {
-        font-size: 1.4vw !important;
-        font-weight: 600 !important;
+        font-size: 1.3vw !important;
+        font-weight: 500 !important;
         padding: 0.4em !important;
         margin-top: 0.7em !important; 
     }
 
     .backgroundOdd:nth-child(even) {
         padding-bottom: 2em !important;
-        padding-top: 1.7em !important;
+        padding-top: 1.3em !important;
     }
     
     .backgroundOdd:nth-child(odd) {
-        padding-top: 1.6em !important;
+        padding-top: 1.3em !important;
         padding-bottom: 1.9em !important;
         margin-right: -1em;
         margin-left: -1em;
@@ -382,7 +389,6 @@ h1 i{
     
     h3{
         font-size: 2.5vw !important
-    
     }
     
     h4 {
