@@ -106,7 +106,7 @@ function createShoppingButton(listOfProducts) {
     shoppingProductButton.appendChild(spanForButtonText);
     spanForButtonIcon.innerHTML = '<i class="fas fa-cart-arrow-down own-fa-cart-arrow-down"></i>';
     spanForButtonText.innerText = "Lägg till i kundvagnen";
-    shoppingProductButton.classList.add("btn-primary", "btn-sm");
+    shoppingProductButton.classList.add("shopping-button", "btn-sm");
     shoppingProductButton.onclick = function() { onShoppingProductButtonClick(listOfProducts); };
     divForTheProduct.appendChild(shoppingProductButton);
 }

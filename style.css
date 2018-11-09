@@ -54,6 +54,12 @@ h3{
     padding: 0 !important;
 }
 
+.shopping-button{
+    background-color: #5596F5;
+    color: #fff;
+    border: none;
+}
+
 /* Log in site */
 
 .login-main{
