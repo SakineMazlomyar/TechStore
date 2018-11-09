@@ -21,12 +21,6 @@ h3{
     color: #fff;
 }
 
-.container {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    height: auto;
-    font-size: 3.7em;
-}
 
 .productRow {
     margin-top: -1em;
@@ -60,6 +54,14 @@ button span{
 
 .shopping-button{
     background-color: #5596F5;
+    color: #fff;
+    border: none;
+    padding: 0.5em !important;
+    border-radius: 0.5em !important;
+}
+
+.deleteButton{
+    background-color: #E64E4E;
     color: #fff;
     border: none;
     padding: 0.5em !important;
@@ -220,7 +222,7 @@ button:hover {
 }
 
 .buttonCart {
-    margin: 0.5em !important;
+    margin: 1em !important;
 }
 
 /*end of kundvagn*/
