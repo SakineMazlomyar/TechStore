@@ -24,6 +24,11 @@ h4 {
 h2, h3, h4 {
     font-weight: bold !important;
 }
+
+nav{
+    margin-bottom: 2em !important;
+}
+
 .login-button{
     background-color: #5596F5;
     color: #fff;
