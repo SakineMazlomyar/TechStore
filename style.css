@@ -51,7 +51,7 @@ h2, h3, h4 {
     padding-bottom: 1.3em !important;
 }
 
-.container {
+.container-fluid {
     margin-bottom: 2em;
     height: auto;
     font-size: 3.7em;
@@ -303,37 +303,37 @@ h1 i{
     }
 
     .widthtImg {
-        width: 25%;
+        width: 15%;
     }
     
     h2{
-        font-size: 3vw !important;
+        font-size: 2.8vw !important;
     }
     
     h3{
-        font-size: 2.5vw !important
+        font-size: 1.4vw !important
     
     }
     
     h4 {
-        font-size: 1.5vw !important;   
+        font-size: 1.4vw !important;   
     }
     
     .shopping-button {
-        font-size: 2.5vw !important;
+        font-size: 1.4vw !important;
         font-weight: 600 !important;
         padding: 0.4em !important;
-        margin-top: 0.6em !important; 
+        margin-top: 0.7em !important; 
     }
 
     .backgroundOdd:nth-child(even) {
-        padding-bottom: 1.9em !important;
-        padding-top: 1.6em !important;
+        padding-bottom: 2em !important;
+        padding-top: 1.7em !important;
     }
     
     .backgroundOdd:nth-child(odd) {
-        padding-top: 1.5em !important;
-        padding-bottom: 1.8em !important;
+        padding-top: 1.6em !important;
+        padding-bottom: 1.9em !important;
         margin-right: -1em;
         margin-left: -1em;
     }
