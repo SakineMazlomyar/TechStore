@@ -283,13 +283,13 @@ button:hover {
     input[type=text], input[type=password] {
         font-size: 1vw !important;
     }
-    
+
     .widthtImg {
-        width: 10%;
+        width: 50%;
     }
     
     h2{
-        font-size: 6vw !important;
+        font-size: vw !important;
     }
     
     h3{
@@ -314,6 +314,7 @@ button:hover {
     }
     
     .backgroundOdd:nth-child(odd) {
+        background-color: transparent;
         padding-top: 1.5em !important;
         padding-bottom: 1.8em !important;
         margin-right: -1em;
