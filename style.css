@@ -303,11 +303,11 @@ h1 i{
     }
 
     .widthtImg {
-        width: 50%;
+        width: 25%;
     }
     
     h2{
-        font-size: vw !important;
+        font-size: 3vw !important;
     }
     
     h3{
@@ -316,7 +316,7 @@ h1 i{
     }
     
     h4 {
-        font-size: 2.6vw !important;   
+        font-size: 1.5vw !important;   
     }
     
     .shopping-button {
@@ -332,7 +332,6 @@ h1 i{
     }
     
     .backgroundOdd:nth-child(odd) {
-        background-color: transparent;
         padding-top: 1.5em !important;
         padding-bottom: 1.8em !important;
         margin-right: -1em;
@@ -344,7 +343,7 @@ h1 i{
     }
 }
 
-@media screen and (min-width: 760px){
+@media screen and (min-width: 760px) and (max-width: 1299px){
     .login-main{
         padding: 6em 10em 6em 10em;
     }
