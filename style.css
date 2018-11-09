@@ -1,12 +1,8 @@
 
 body{
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     color: #212121 !important;
-}
-
-main{
-    padding: 2em;
 }
 
 h1{
@@ -246,6 +242,7 @@ button:hover {
 .h1-kundvagn{
     font-size: 4vw !important;
     font-weight: 700;
+    margin-top: 2em;
 }
 
 h1 i{
@@ -282,6 +279,18 @@ h1 i{
      .login-form{
          margin-top: 0.5em;
      }
+}
+
+@media screen and (max-width: 450px){
+    .divProduct{
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 451px) and (max-width: 790px){
+    .divProduct{
+        width: 40%;
+    }
 }
 
 @media screen and (min-width: 1300px){
