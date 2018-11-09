@@ -9,6 +9,7 @@ function initShoppingCart() {
     updateNumberOfChosenProducts();
     ProductsInKundvagnWebPage(productCartList);
     countTotalPrice()
+   
 }
 
 // Update the indicator in the navigation bar
@@ -36,6 +37,7 @@ function ProductsInKundvagnWebPage (productCartList) {
         createTitleFromProductList(productCartList[i]);
         createPriceFromProductList(productCartList[i]);
         createDeleteButton(productCartList[i]);
+        
 
         divForAllProductsInRow.appendChild(divForSingleProduct)
         
@@ -122,6 +124,7 @@ function deleteButtonClick(productCartList) {
     document.getElementById("mainContent").innerHTML = "";
     //reload shoppingcart
     initShoppingCart();
+   
     
 };
 
@@ -141,6 +144,8 @@ function countTotalPrice(){
     var h1 = document.createElement("h1")
     h1.innerText = "Totalt Pris: " + totalPrice + "kr";
     divForTotalPrice.appendChild(h1);
-    document.body.appendChild(divForTotalPrice)
+    var main = document.getElementById("mainContent");
+    main.appendChild(divForTotalPrice)
+    return divForTotalPrice
 
 }
