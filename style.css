@@ -1,7 +1,7 @@
 
 body{
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     color: #212121 !important;
 }
 
@@ -246,6 +246,7 @@ button:hover {
 .h1-kundvagn{
     font-size: 4vw !important;
     font-weight: 700;
+    margin-top: 2em;
 }
 
 h1 i{
