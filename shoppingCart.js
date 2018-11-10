@@ -1,23 +1,22 @@
 
 function initShoppingCart() {
     
-    if (!("shoppingCart" in localStorage)) {
-        localStorage.setItem("shoppingCart", "[]");
+    if (!(getShoppingCartName() in localStorage)) {
+        localStorage.setItem(getShoppingCartName(), "[]");
     }
-    var productInCart = localStorage.getItem("shoppingCart");
+    var productInCart = localStorage.getItem(getShoppingCartName());
     var productCartList = JSON.parse(productInCart);
     
     updateNumberOfChosenProducts();
     ProductsInKundvagnWebPage(productCartList);
     countTotalPrice();
     displayTheLoggedInUsername();
-   
 }
 
 // Update the indicator in the navigation bar
 function updateNumberOfChosenProducts() {
     var productNumberIndicator = document.getElementById("number-of-chosen-products");
-    var shoppingCartString = localStorage.getItem("shoppingCart");
+    var shoppingCartString = localStorage.getItem(getShoppingCartName());
     var shoppingCartJson = JSON.parse(shoppingCartString);
     productNumberIndicator.innerText = shoppingCartJson.length;
     
@@ -117,7 +116,7 @@ function createDeleteButton(productCartList) {
 //create delete function here
 function deleteButtonClick(productCartList) {
 
-    var ItemToDelete = localStorage.getItem("shoppingCart");
+    var ItemToDelete = localStorage.getItem(getShoppingCartName());
     var deleteProduct = JSON.parse(ItemToDelete);
     var index = 0;
     
@@ -128,7 +127,7 @@ function deleteButtonClick(productCartList) {
     };
     
     deleteProduct.splice(index, 1);
-    localStorage.setItem("shoppingCart", JSON.stringify(deleteProduct));
+    localStorage.setItem(getShoppingCartName(), JSON.stringify(deleteProduct));
  
     // clear content in main.
     document.getElementById("mainContent").innerHTML = "";
@@ -143,7 +142,7 @@ function countTotalPrice(){
     we get the price of each obj and sum them and pun in body
      */
     var totalPrice = 0;
-    var choosenProducts = localStorage.getItem("shoppingCart");
+    var choosenProducts = localStorage.getItem(getShoppingCartName());
     var choosenProductsToArray = JSON.parse(choosenProducts);
     choosenProductsToArray.forEach(function(product){
         totalPrice += product.price;
@@ -173,4 +172,9 @@ function displayTheLoggedInUsername() {
             document.getElementById("loginButton").style.display = "inline-block";
         }
     }
+}
+
+function getShoppingCartName() {
+    var loggedInUsername = localStorage.getItem("loggedInAs");
+    return "shoppingCart" + loggedInUsername;
 }
