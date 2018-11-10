@@ -61,6 +61,7 @@ function loginToThePage() {
         if (usernameMatchesPassword(loginUsername, loginPassword)){
             localStorage.setItem("loggedInAs", loginUsername);
             moveGuestShoppingCartToUserShoppingCart();
+            window.location.assign('index.html');
         } else {
             alert("Wrong password!");
         }
@@ -75,7 +76,7 @@ function moveGuestShoppingCartToUserShoppingCart() {
     var userShoppingCart = JSON.parse(localStorage.getItem("shoppingCart" + loggedInAs));
 
     userShoppingCart = userShoppingCart.concat(guestShoppingCart);
-    
+
     localStorage.setItem("shoppingCart" + loggedInAs, JSON.stringify(userShoppingCart));
     localStorage.setItem("shoppingCart", "[]");
 }
