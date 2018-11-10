@@ -33,6 +33,7 @@ function initShoppingCart() {
     var shoppingCartJson = JSON.parse(shoppingCartString);
     addProductsToWebpage(shoppingCartJson);
     updateNumberOfChosenProducts();
+    displayTheLoggedInUsername();
 }
 
 /** Uses the loaded products data to create a visible product list on the website */
@@ -139,14 +140,17 @@ function updateNumberOfChosenProducts() {
 }
 
 function displayTheLoggedInUsername() {
-    var loggedInUserDiv = document.getElementById('loggedInUsernameDiv');
+    var loggedInUserDivs = document.getElementsByClassName('loggedInUsernameDiv');
     var loggedInUsername = localStorage.getItem("loggedInAs");
-    if (!(loggedInUsername === "")) {
-        loggedInUserDiv.innerText = "Hi, " + loggedInUsername + "!";
-        document.getElementById("logoutButton").style.display = "inline-block";
-        document.getElementById("loginButton").style.display = "none";
-    } else {
-        document.getElementById("logoutButton").style.display = "none";
-        document.getElementById("loginButton").style.display = "inline-block";
+    for(var i = 0; i < loggedInUserDivs.length; i++){
+        var loggedInUserDiv = loggedInUserDivs[i];
+        if (!(loggedInUsername === "")) {
+            loggedInUserDiv.innerText = "Hi, " + loggedInUsername + "!";
+            document.getElementById("logoutButton").style.display = "inline-block";
+            document.getElementById("loginButton").style.display = "none";
+        } else {
+            document.getElementById("logoutButton").style.display = "none";
+            document.getElementById("loginButton").style.display = "inline-block";
+        }
     }
 }

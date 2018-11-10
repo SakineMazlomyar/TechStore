@@ -1,3 +1,4 @@
+
 function initShoppingCart() {
     
     if (!("shoppingCart" in localStorage)) {
@@ -8,7 +9,8 @@ function initShoppingCart() {
     
     updateNumberOfChosenProducts();
     ProductsInKundvagnWebPage(productCartList);
-    countTotalPrice()
+    countTotalPrice();
+    displayTheLoggedInUsername();
    
 }
 
@@ -62,7 +64,7 @@ function shoppingCartHeader() {
 
 function divProductRow() {
     AllProductsRow = document.createElement("div");
-    AllProductsRow.classList.add("container", "d-flex", "flex-wrap", "justify-content-center");
+    AllProductsRow.classList.add("card-deck");
     return AllProductsRow;
 }
 
@@ -155,5 +157,20 @@ function countTotalPrice(){
     var main = document.getElementById("mainContent");
     main.appendChild(divForTotalPrice)
     return divForTotalPrice
+}
 
+function displayTheLoggedInUsername() {
+    var loggedInUserDivs = document.getElementsByClassName('loggedInUsernameDiv');
+    var loggedInUsername = localStorage.getItem("loggedInAs");
+    for(var i = 0; i < loggedInUserDivs.length; i++){
+        var loggedInUserDiv = loggedInUserDivs[i];
+        if (!(loggedInUsername === "")) {
+            loggedInUserDiv.innerText = "Hi, " + loggedInUsername + "!";
+            document.getElementById("logoutButton").style.display = "inline-block";
+            document.getElementById("loginButton").style.display = "none";
+        } else {
+            document.getElementById("logoutButton").style.display = "none";
+            document.getElementById("loginButton").style.display = "inline-block";
+        }
+    }
 }

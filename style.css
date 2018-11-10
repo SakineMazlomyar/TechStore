@@ -172,7 +172,7 @@ button:hover {
     position: relative;
 }
 
-#loggedInUsernameDiv{
+.loggedInUsernameDiv{
     color: #fff;
     float: left;
     margin-right: 1em;
@@ -246,10 +246,15 @@ button:hover {
 
 /*Kundvagn site*/
 
+main{
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .h1-kundvagn{
     font-size: 4vw !important;
     font-weight: 700;
-    margin: 2em;
+    padding: 2em;
 }
 
 h1 i{
@@ -258,12 +263,13 @@ h1 i{
 
 .divProduct {
     background-color: #F5F5F5;
-    margin: 0.2em;
+    margin: 1em;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    width: 20%;
     border: 2px solid #5596F5;
-    border-radius: 0.3em;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
 }
 
 .wideImg {
@@ -288,15 +294,9 @@ h1 i{
      }
 }
 
-@media screen and (max-width: 450px){
-    .divProduct{
-        width: 90%;
-    }
-}
-
-@media screen and (min-width: 451px) and (max-width: 790px){
-    .divProduct{
-        width: 40%;
+@media screen and (min-width: 790px){
+    .divProduct {
+        width: 20%;
     }
 }
 
