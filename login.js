@@ -60,13 +60,25 @@ function loginToThePage() {
     if (userAlreadyExists(loginUsername)) {
         if (usernameMatchesPassword(loginUsername, loginPassword)){
             localStorage.setItem("loggedInAs", loginUsername);
-            window.location = "index.html";
+            moveGuestShoppingCartToUserShoppingCart();
+            window.location.assign('index.html');
         } else {
             alert("Wrong password!");
         }
     } else {
         alert("This username does not exist!");
     }
+}
+
+function moveGuestShoppingCartToUserShoppingCart() {
+    var loggedInAs = localStorage.getItem("loggedInAs");
+    var guestShoppingCart = JSON.parse(localStorage.getItem("shoppingCart"));
+    var userShoppingCart = JSON.parse(localStorage.getItem("shoppingCart" + loggedInAs));
+
+    userShoppingCart = userShoppingCart.concat(guestShoppingCart);
+
+    localStorage.setItem("shoppingCart" + loggedInAs, JSON.stringify(userShoppingCart));
+    localStorage.setItem("shoppingCart", "[]");
 }
 
 function logOut() {

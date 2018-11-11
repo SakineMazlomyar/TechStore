@@ -1,21 +1,23 @@
+
 function initShoppingCart() {
     
-    if (!("shoppingCart" in localStorage)) {
-        localStorage.setItem("shoppingCart", "[]");
+    if (!(getShoppingCartName() in localStorage)) {
+        localStorage.setItem(getShoppingCartName(), "[]");
     }
-    var productInCart = localStorage.getItem("shoppingCart");
+    var productInCart = localStorage.getItem(getShoppingCartName());
     var productCartList = JSON.parse(productInCart);
     
     updateNumberOfChosenProducts();
     ProductsInKundvagnWebPage(productCartList);
-    countTotalPrice()
-   
+    countTotalPrice();
+    displayTheLoggedInUsername();
+    createFinishShoppingCardButton()
 }
 
 // Update the indicator in the navigation bar
 function updateNumberOfChosenProducts() {
     var productNumberIndicator = document.getElementById("number-of-chosen-products");
-    var shoppingCartString = localStorage.getItem("shoppingCart");
+    var shoppingCartString = localStorage.getItem(getShoppingCartName());
     var shoppingCartJson = JSON.parse(shoppingCartString);
     productNumberIndicator.innerText = shoppingCartJson.length;
     
@@ -62,13 +64,13 @@ function shoppingCartHeader() {
 
 function divProductRow() {
     AllProductsRow = document.createElement("div");
-    AllProductsRow.classList.add("container", "d-flex", "flex-wrap", "justify-content-center");
+    AllProductsRow.classList.add("container-fluid", "flex-wrap", "d-flex");
     return AllProductsRow;
 }
 
 function productDiv() {
     var oneProductDiv = document.createElement("div");
-    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "divProduct");
+    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "divProduct", "pt-5");
     AllProductsRow.appendChild(oneProductDiv);
     return oneProductDiv;
 }
@@ -115,7 +117,7 @@ function createDeleteButton(productCartList) {
 //create delete function here
 function deleteButtonClick(productCartList) {
 
-    var ItemToDelete = localStorage.getItem("shoppingCart");
+    var ItemToDelete = localStorage.getItem(getShoppingCartName());
     var deleteProduct = JSON.parse(ItemToDelete);
     var index = 0;
     
@@ -126,7 +128,7 @@ function deleteButtonClick(productCartList) {
     };
     
     deleteProduct.splice(index, 1);
-    localStorage.setItem("shoppingCart", JSON.stringify(deleteProduct));
+    localStorage.setItem(getShoppingCartName(), JSON.stringify(deleteProduct));
  
     // clear content in main.
     document.getElementById("mainContent").innerHTML = "";
@@ -138,22 +140,80 @@ function deleteButtonClick(productCartList) {
 
 function countTotalPrice(){
     /* we get the string array from localstorage and parse it to js array
-    we get the price of each obj and sum them and pun in body
+    we get the price of each obj and sum them and put in body
      */
     var totalPrice = 0;
-    var choosenProducts = localStorage.getItem("shoppingCart");
+    var choosenProducts = localStorage.getItem(getShoppingCartName());
     var choosenProductsToArray = JSON.parse(choosenProducts);
     choosenProductsToArray.forEach(function(product){
         totalPrice += product.price;
     }); 
-
     var divForTotalPrice = document.createElement("div");
     divForTotalPrice.classList.add("text-center")
-    var h1 = document.createElement("h1")
-    h1.innerText = "Totalt Pris: " + totalPrice + "kr";
-    divForTotalPrice.appendChild(h1);
+    var h3ForTotal = document.createElement("h3")
+    h3ForTotal.classList.add("h3ForTotal");
+    h3ForTotal.innerText = "Totalt Pris: " + totalPrice + " kr";
+    divForTotalPrice.appendChild(h3ForTotal);
     var main = document.getElementById("mainContent");
     main.appendChild(divForTotalPrice)
     return divForTotalPrice
+}
+function createFinishShoppingCardButton(){
+    var divForButton  =document.createElement("div")
+    divForButton.classList.add("text-center")
+    var button = document.createElement("button");
+    var checkSymbol = document.createElement("span")
+    var text= document.createElement("span")
+    button.appendChild(checkSymbol)
+    button.appendChild(text)
+    checkSymbol.innerHTML ='<i class="fas fa-check"></i>';
+    text.innerText ="SlutFör ditt köp";
+    button.classList.add("shopping-button", "btn-sm");
+    var mainDiv = document.getElementById("mainContent");
+    divForButton.appendChild(button)
+    mainDiv.appendChild(divForButton)
 
+    button.setAttribute("onclick", "makeEmptyShoppingCart()")
+    return button
+}
+
+function makeEmptyShoppingCart(){
+    if ((getShoppingCartName() in localStorage)) {
+        localStorage.setItem(getShoppingCartName(), "[]");
+        updateNumberOfChosenProducts()
+        var theMainContainer = document.getElementById("mainContent");
+        theMainContainer.innerHTML = ""
+        
+        
+        var divForThanks  =document.createElement("div")
+        divForThanks.classList.add("text-center")
+        var h1 = document.createElement("h1")
+        h1.innerText = "Tack för ditt köp!"
+        divForThanks.appendChild(h1)
+        var mainDiv = document.getElementById("mainContent");
+        mainDiv.appendChild(divForThanks)
+        
+
+    }
+   
+}
+function displayTheLoggedInUsername() {
+    var loggedInUserDivs = document.getElementsByClassName('loggedInUsernameDiv');
+    var loggedInUsername = localStorage.getItem("loggedInAs");
+    for(var i = 0; i < loggedInUserDivs.length; i++){
+        var loggedInUserDiv = loggedInUserDivs[i];
+        if (!(loggedInUsername === "")) {
+            loggedInUserDiv.innerText = "Hi, " + loggedInUsername + "!";
+            document.getElementById("logoutButton").style.display = "inline-block";
+            document.getElementById("loginButton").style.display = "none";
+        } else {
+            document.getElementById("logoutButton").style.display = "none";
+            document.getElementById("loginButton").style.display = "inline-block";
+        }
+    }
+}
+
+function getShoppingCartName() {
+    var loggedInUsername = localStorage.getItem("loggedInAs");
+    return "shoppingCart" + loggedInUsername;
 }

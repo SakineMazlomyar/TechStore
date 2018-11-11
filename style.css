@@ -1,7 +1,7 @@
 
 body{
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     color: #212121 !important;
 }
 
@@ -83,7 +83,7 @@ h2, h3, h4 {
 
 #number-of-chosen-products{
     padding: 0;
-    font-size: 2vw;
+    font-size: 1.5em;
     font-weight: 400;
 }
 
@@ -112,6 +112,7 @@ button span{
     border: none;
     padding: 0.5em !important;
     border-radius: 0.5em !important;
+    min-height: 20px;
 }
 
 /* Log in site */
@@ -172,10 +173,11 @@ button:hover {
     position: relative;
 }
 
-#loggedInUsernameDiv{
+.loggedInUsernameDiv{
     color: #fff;
     float: left;
     margin-right: 1em;
+    padding-bottom: -15px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
@@ -246,10 +248,15 @@ button:hover {
 
 /*Kundvagn site*/
 
+#mainContent{
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
 .h1-kundvagn{
     font-size: 4vw !important;
     font-weight: 700;
-    margin-top: 2em;
+    padding: 2em;
 }
 
 h1 i{
@@ -258,22 +265,25 @@ h1 i{
 
 .divProduct {
     background-color: #F5F5F5;
-    margin: 0.2em;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    width: 20%;
+    margin: 0.5em;
+    padding: 0.2em;
     border: 2px solid #5596F5;
-    border-radius: 0.3em;
+    border-radius: 0.6em;
+    width: 50%;
 }
 
 .wideImg {
     object-fit: contain;
     height: 60%;
-    width: 80%;
+    width: 60%;
 }
 
 .buttonCart {
     margin: 1em !important;
+}
+
+.h3ForTotal{
+    margin-bottom: 2em;
 }
 
 /*end of kundvagn*/
@@ -288,15 +298,9 @@ h1 i{
      }
 }
 
-@media screen and (max-width: 450px){
-    .divProduct{
-        width: 90%;
-    }
-}
-
-@media screen and (min-width: 451px) and (max-width: 790px){
-    .divProduct{
-        width: 40%;
+@media screen and (min-width: 790px){
+    .divProduct {
+        width: 20%;
     }
 }
 
@@ -421,5 +425,6 @@ h1 i{
         margin-right: -1em;
         margin-left: -1em;
     }
+
     /*end of  index css for tablet */
 }

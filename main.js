@@ -19,20 +19,13 @@ function loadProducts() {
 }
 
 function initSite() {
-    if (!("shoppingCart" in localStorage)) {
-        localStorage.setItem("shoppingCart", "[]");
+    if (!(getShoppingCartName() in localStorage)) {
+        localStorage.setItem(getShoppingCartName(), "[]");
     }
     loadProducts();
     updateNumberOfChosenProducts(); // Here we call the function to which we count the number of chosen products
     // This would also be a good place to initialize other parts of the UI
     displayTheLoggedInUsername();
-}
-
-function initShoppingCart() {
-    var shoppingCartString = localStorage.getItem("shoppingCart");
-    var shoppingCartJson = JSON.parse(shoppingCartString);
-    addProductsToWebpage(shoppingCartJson);
-    updateNumberOfChosenProducts();
 }
 
 /** Uses the loaded products data to create a visible product list on the website */
@@ -114,7 +107,7 @@ function createShoppingButton(listOfProducts) {
 
 // Handle shoppingProductButton
 function onShoppingProductButtonClick(listOfProducts) {
-    var shoppingCartString = localStorage.getItem("shoppingCart");
+    var shoppingCartString = localStorage.getItem(getShoppingCartName());
 
     //Byt Namn? (shoppingCartJson)
     var shoppingCartJson = JSON.parse(shoppingCartString);
@@ -125,28 +118,36 @@ function onShoppingProductButtonClick(listOfProducts) {
 	listOfProducts["IdNr"] = timeStamp;
 
     shoppingCartJson.push(listOfProducts);
-    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartJson));
+    localStorage.setItem(getShoppingCartName(), JSON.stringify(shoppingCartJson));
     updateNumberOfChosenProducts();
 }
 
 // Update the indicator in the navigation bar
 function updateNumberOfChosenProducts() {
     var productNumberIndicator = document.getElementById("number-of-chosen-products");
-    var shoppingCartString = localStorage.getItem("shoppingCart");
+    var shoppingCartString = localStorage.getItem(getShoppingCartName());
     var shoppingCartJson = JSON.parse(shoppingCartString);
     productNumberIndicator.innerText = shoppingCartJson.length;
    
 }
 
 function displayTheLoggedInUsername() {
-    var loggedInUserDiv = document.getElementById('loggedInUsernameDiv');
+    var loggedInUserDivs = document.getElementsByClassName('loggedInUsernameDiv');
     var loggedInUsername = localStorage.getItem("loggedInAs");
-    if (!(loggedInUsername === "")) {
-        loggedInUserDiv.innerText = "Hi, " + loggedInUsername + "!";
-        document.getElementById("logoutButton").style.display = "inline-block";
-        document.getElementById("loginButton").style.display = "none";
-    } else {
-        document.getElementById("logoutButton").style.display = "none";
-        document.getElementById("loginButton").style.display = "inline-block";
+    for(var i = 0; i < loggedInUserDivs.length; i++){
+        var loggedInUserDiv = loggedInUserDivs[i];
+        if (!(loggedInUsername === "")) {
+            loggedInUserDiv.innerText = "Hi, " + loggedInUsername + "!";
+            document.getElementById("logoutButton").style.display = "inline-block";
+            document.getElementById("loginButton").style.display = "none";
+        } else {
+            document.getElementById("logoutButton").style.display = "none";
+            document.getElementById("loginButton").style.display = "inline-block";
+        }
     }
+}
+
+function getShoppingCartName() {
+    var loggedInUsername = localStorage.getItem("loggedInAs");
+    return "shoppingCart" + loggedInUsername;
 }
