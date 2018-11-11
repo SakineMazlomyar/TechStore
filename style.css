@@ -110,9 +110,9 @@ button span{
     background-color: #E64E4E;
     color: #fff;
     border: none;
-    padding: 0.5em !important;
+    
     border-radius: 0.5em !important;
-    min-height: 20px;
+    min-height: 20px !important;
 }
 
 /* Log in site */
@@ -274,8 +274,9 @@ h1 i{
 
 .wideImg {
     object-fit: contain;
-    height: 60%;
+    height: auto;
     width: 60%;
+    max-height: 320px;
 }
 
 .buttonCart {

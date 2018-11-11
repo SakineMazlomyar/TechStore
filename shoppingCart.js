@@ -108,7 +108,7 @@ function createDeleteButton(productCartList) {
     deleteButton.appendChild(spanForDeleteButtonText);
     spanForDeleteButtonIcon.innerHTML = '<i class="far fa-trash-alt"></i>';
     spanForDeleteButtonText.innerText = "Ta bort";
-    deleteButton.classList.add("btn-sm", "buttonCart", "deleteButton");
+    deleteButton.classList.add("btn-sm", "deleteButton", "btn");
     deleteButton.onclick = function() { deleteButtonClick(productCartList) };
     divForSingleProduct.appendChild(deleteButton);
     return deleteButton;
