@@ -21,8 +21,6 @@ h3{
 h4 {
     font-size: 3.8vw !important;
     padding: 0.3em 0.5em;
-    
-    /*font-size: 3vw !important;  */
 }
 
 h2, h3, h4 {
@@ -30,7 +28,7 @@ h2, h3, h4 {
 }
 
 .widthtImg {
-    width: 60%;
+    width: 55%;
 }
 
 .login-button{
@@ -55,7 +53,6 @@ h2, h3, h4 {
 
 .container-fluid {
     margin-top: 0.5em;
-    margin-bottom: 1.5em;
     height: auto;
     font-size: 3.7em;
 }
@@ -391,7 +388,7 @@ h1 i{
 
     /* Index css for tablet */
     .widthtImg {
-        width: 35%;
+        width: 30%;
         padding-top: 0.3em;
     }
     
@@ -405,7 +402,8 @@ h1 i{
     }
     
     h4 {
-        font-size: 2.6vw !important;   
+        font-size: 2.6vw !important;
+        padding: 0 2em;
     }
     
     .shopping-button {
