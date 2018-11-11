@@ -321,8 +321,7 @@ h1 i{
     }
 
     .widthtImg {
-        width: 15%;
-        padding-top: 0.3em;
+        width: 25%;
     }
     
     h2{
@@ -338,7 +337,7 @@ h1 i{
     h4 {
         font-size: 1.4vw !important;
         font-weight: 600 !important;   
-        padding-top: 0.5em;
+        padding-top: 0.3em;
     }
     
     .shopping-button {
