@@ -280,6 +280,10 @@ h1 i{
     margin: 1em !important;
 }
 
+.h3ForTotal{
+    margin-bottom: 2em;
+}
+
 /*end of kundvagn*/
 
 @media screen and (max-width: 350px){

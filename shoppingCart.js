@@ -150,9 +150,10 @@ function countTotalPrice(){
 
     var divForTotalPrice = document.createElement("div");
     divForTotalPrice.classList.add("text-center")
-    var h1 = document.createElement("h1")
-    h1.innerText = "Totalt Pris: " + totalPrice + "kr";
-    divForTotalPrice.appendChild(h1);
+    var h3ForTotal = document.createElement("h3")
+    h3ForTotal.classList.add("h3ForTotal");
+    h3ForTotal.innerText = "Totalt Pris: " + totalPrice + " kr";
+    divForTotalPrice.appendChild(h3ForTotal);
     var main = document.getElementById("mainContent");
     main.appendChild(divForTotalPrice)
     return divForTotalPrice
