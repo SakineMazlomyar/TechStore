@@ -1,7 +1,7 @@
 
 body{
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     color: #212121 !important;
 }
 
@@ -246,9 +246,8 @@ button:hover {
 
 /*Kundvagn site*/
 
-main{
-    margin-right: auto;
-    margin-left: auto;
+#mainContent{
+    padding-top: 3em;
 }
 
 .h1-kundvagn{
@@ -263,19 +262,18 @@ h1 i{
 
 .divProduct {
     background-color: #F5F5F5;
-    margin: 1em;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
+    display: block;
+    margin: 0.5em;
+    padding: 0.2em;
     border: 2px solid #5596F5;
-    border-radius: 1em;
-    display: flex;
-    justify-content: center;
+    border-radius: 0.6em;
+    width: 50%;
 }
 
 .wideImg {
     object-fit: contain;
     height: 60%;
-    width: 80%;
+    width: 60%;
 }
 
 .buttonCart {
@@ -417,5 +415,6 @@ h1 i{
         margin-right: -1em;
         margin-left: -1em;
     }
+
     /*end of  index css for tablet */
 }

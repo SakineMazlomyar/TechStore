@@ -63,13 +63,13 @@ function shoppingCartHeader() {
 
 function divProductRow() {
     AllProductsRow = document.createElement("div");
-    AllProductsRow.classList.add("card-deck");
+    AllProductsRow.classList.add("container-fluid", "flex-wrap", "d-flex");
     return AllProductsRow;
 }
 
 function productDiv() {
     var oneProductDiv = document.createElement("div");
-    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "divProduct");
+    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "divProduct", "pt-5");
     AllProductsRow.appendChild(oneProductDiv);
     return oneProductDiv;
 }
