@@ -112,6 +112,7 @@ button span{
     border: none;
     padding: 0.5em !important;
     border-radius: 0.5em !important;
+    min-height: 20px;
 }
 
 /* Log in site */
@@ -249,6 +250,7 @@ button:hover {
 
 #mainContent{
     padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 .h1-kundvagn{
