@@ -62,6 +62,7 @@ function createProductDiv() {
 function createProductName(listOfProducts) {
     var productName = document.createElement("h2");
     productName.innerText = listOfProducts.title;
+    productName.classList.add("text-center");
     divForTheProduct.appendChild(productName)
     return productName;
 }
