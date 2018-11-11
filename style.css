@@ -274,8 +274,9 @@ h1 i{
 
 .wideImg {
     object-fit: contain;
-    height: 60%;
+    height: auto;
     width: 60%;
+    max-height: 320px;
 }
 
 .buttonCart {
