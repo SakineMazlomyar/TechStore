@@ -183,6 +183,7 @@ function makeEmptyShoppingCart(){
         var theMainContainer = document.getElementById("mainContent");
         theMainContainer.innerHTML = ""
         
+        
         var divForThanks  =document.createElement("div")
         divForThanks.classList.add("text-center")
         var h1 = document.createElement("h1")
