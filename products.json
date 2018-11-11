@@ -19,5 +19,35 @@
         "description": "Super nice and beautiful smartphone from LG.",
         "image": "images/LGV30.png",
         "price": 7495
+    },{
+        "title": "Iphone Xs 256GB",
+        "description": "Super nice and beautiful smartphone from LG.",
+        "image": "images/IphoneXs256gb.jpg",
+        "price": 15489
+    },{
+        "title": "Asus Zenphone 5z",
+        "description": "Super nice and beautiful smartphone from LG.",
+        "image": "images/AsusZenphone5Z.jpg",
+        "price": 4989
+    },{
+        "title": "Huawei P20 Pro",
+        "description": "Super nice and beautiful smartphone from LG.",
+        "image": "images/HuaweiP20Pro.jpg",
+        "price": 7589
+    },{
+        "title": "Samsung Galaxy S9 Plus",
+        "description": "Super nice and beautiful smartphone from LG.",
+        "image": "images/SamsungS9Plus.jpg",
+        "price": 7990
+    },{
+        "title": "Sony Xperia XZ3",
+        "description": "Super nice and beautiful smartphone from LG.",
+        "image": "images/SonyXperiaXz3.jpg",
+        "price": 7990
+    },{
+        "title": "OnePlus 6T",
+        "description": "Super nice and beautiful smartphone from LG.",
+        "image": "images/Oneplus6T.png",
+        "price": 6295
     }
 ]

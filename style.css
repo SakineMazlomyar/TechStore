@@ -361,6 +361,10 @@ h1 i{
         margin-right: -1em;
         margin-left: -1em;
     }
+
+    .container-fluid {
+        margin-top: 0.2em;
+    }
 }
 
 @media screen and (min-width: 760px) and (max-width: 1299px){
