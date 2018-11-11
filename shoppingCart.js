@@ -11,6 +11,7 @@ function initShoppingCart() {
     ProductsInKundvagnWebPage(productCartList);
     countTotalPrice();
     displayTheLoggedInUsername();
+    createFinishShoppingCardButton()
 }
 
 // Update the indicator in the navigation bar
@@ -139,7 +140,7 @@ function deleteButtonClick(productCartList) {
 
 function countTotalPrice(){
     /* we get the string array from localstorage and parse it to js array
-    we get the price of each obj and sum them and pun in body
+    we get the price of each obj and sum them and put in body
      */
     var totalPrice = 0;
     var choosenProducts = localStorage.getItem(getShoppingCartName());
@@ -147,7 +148,6 @@ function countTotalPrice(){
     choosenProductsToArray.forEach(function(product){
         totalPrice += product.price;
     }); 
-
     var divForTotalPrice = document.createElement("div");
     divForTotalPrice.classList.add("text-center")
     var h1 = document.createElement("h1")
@@ -157,7 +157,44 @@ function countTotalPrice(){
     main.appendChild(divForTotalPrice)
     return divForTotalPrice
 }
+function createFinishShoppingCardButton(){
+    var divForButton  =document.createElement("div")
+    divForButton.classList.add("text-center")
+    var button = document.createElement("button");
+    var checkSymbol = document.createElement("span")
+    var text= document.createElement("span")
+    button.appendChild(checkSymbol)
+    button.appendChild(text)
+    checkSymbol.innerHTML ='<i class="fas fa-check"></i>';
+    text.innerText ="SlutFör ditt köp";
+    button.classList.add("shopping-button", "btn-sm");
+    var mainDiv = document.getElementById("mainContent");
+    divForButton.appendChild(button)
+    mainDiv.appendChild(divForButton)
 
+    button.setAttribute("onclick", "makeEmptyShoppingCart()")
+    return button
+}
+
+function makeEmptyShoppingCart(){
+    if ((getShoppingCartName() in localStorage)) {
+        localStorage.setItem(getShoppingCartName(), "[]");
+        updateNumberOfChosenProducts()
+        var theMainContainer = document.getElementById("mainContent");
+        theMainContainer.innerHTML = ""
+        
+        var divForThanks  =document.createElement("div")
+        divForThanks.classList.add("text-center")
+        var h1 = document.createElement("h1")
+        h1.innerText = "Tack för ditt köp!"
+        divForThanks.appendChild(h1)
+        var mainDiv = document.getElementById("mainContent");
+        mainDiv.appendChild(divForThanks)
+        
+
+    }
+   
+}
 function displayTheLoggedInUsername() {
     var loggedInUserDivs = document.getElementsByClassName('loggedInUsernameDiv');
     var loggedInUsername = localStorage.getItem("loggedInAs");
