@@ -15,14 +15,14 @@
     <script src="./login.js"></script>
 </head>
 <body onload="initShoppingCart()">
-    <nav class="container-fluid bg-dark fixed-top navbar" style="font-size: 1em;">
-        <a class="text-white navbar-text fontSize" href="index.html">TechStore</a>
+    <nav class="container-fluid fixed-top navbar  pb-0" style="background-color: #212121;">
+        <a class="text-white navbar-text" href="index.html" style="font-size: 1.9em">TechStore</a>
         <div>
             <div class="loggedInUsernameDiv"></div>
             <a id="loginButton" href="login.html"><button class="go-to-login-page-button">Log in / Register</button></a>
             <button id="logoutButton" class="go-to-login-page-button" onclick="logOut()" style="display: none;">Log out</button>
             <div id="number-of-chosen-products" class="text-white navbar-text"></div>
-            <a class="fas fa-shopping-cart text-white navbar-text fontSize" href="kundvagn.html" target="_self"></a>
+            <a class="fas fa-shopping-cart text-white navbar-text" href="kundvagn.html" target="_self"></a>
         </div>
     </nav>
     <!-- Your header title and shopping cart button goes here  -->
