@@ -51,11 +51,11 @@ h2, h3, h4 {
     margin:0 !important;
 }
 
-.container-fluid {
+/* .container-fluid {
     margin-top: 0.5em;
     height: auto;
     font-size: 3.7em;
-}
+} */
 
 .login-button{
     background-color: #5596F5;
@@ -365,6 +365,7 @@ h1 i{
 }
 
 @media screen and (min-width: 760px) and (max-width: 1299px){
+
     .login-main{
         padding: 6em 10em 6em 10em;
     }
