@@ -51,16 +51,11 @@ h2, h3, h4 {
     margin:0 !important;
 }
 
-<<<<<<< HEAD
-/* .container-fluid {
-    margin-top: 0.5em;
-=======
 .container-fluid {
-    margin-top: 0.7em;
->>>>>>> 04f6ea8447c91ed695e22a67a0ef1d14a4a188a5
+    margin-top: 0.5em;
     height: auto;
     font-size: 3.7em;
-} */
+} 
 
 .login-button{
     background-color: #5596F5;
@@ -260,25 +255,6 @@ h1 i{
 }
 
 @media screen and (min-width: 760px) and (max-width: 1299px){
-<<<<<<< HEAD:css/style.css
-=======
-
-    .login-main{
-        padding: 6em 10em 6em 10em;
-    }
-    
-    .login-main h2{
-        font-size: 2vw !important;
-    }
-
-    .login-labels{
-        font-size: 1.5vw;
-    }
-
-    input[type=text], input[type=password] {
-        font-size: 1.5vw;
-    }
->>>>>>> d04ca7238fe8b841aebc0dd8a04fec66357722bc:style.css
 
     .register-avatar-container{
         margin: 0;
