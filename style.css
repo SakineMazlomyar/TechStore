@@ -28,7 +28,7 @@ h2, h3, h4 {
 }
 
 .widthtImg {
-    width: 55%;
+    width: 85%;
 }
 
 .login-button{
@@ -52,7 +52,7 @@ h2, h3, h4 {
 }
 
 .container-fluid {
-    margin-top: 0.5em;
+    margin-top: 0.7em;
     height: auto;
     font-size: 3.7em;
 }
@@ -387,7 +387,7 @@ h1 i{
 
     /* Index css for tablet */
     .widthtImg {
-        width: 30%;
+        width: 50%;
         padding-top: 0.3em;
     }
     
@@ -409,17 +409,17 @@ h1 i{
         font-size: 2.5vw !important;
         font-weight: 525 !important;
         padding: 0.4em !important;
-        margin-top: 0.6em !important; 
+        margin-top: 0.6em; 
     }
 
     .backgroundOdd:nth-child(even) {
-        padding-bottom: 1.9em !important;
+        padding-bottom: 1.9em;
         padding-top: 1.6em !important;
     }
     
     .backgroundOdd:nth-child(odd) {
         padding-top: 1.5em !important;
-        padding-bottom: 1.8em !important;
+        padding-bottom: 1.8em;
         margin-right: -1em;
         margin-left: -1em;
     }
