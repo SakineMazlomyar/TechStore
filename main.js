@@ -108,6 +108,8 @@ function createShoppingButton(listOfProducts) {
 
 // Handle shoppingProductButton
 function onShoppingProductButtonClick(listOfProducts) {
+
+    showAddedProductInSideBar(listOfProducts);
     var shoppingCartString = localStorage.getItem(getShoppingCartName());
 
     //Byt Namn? (shoppingCartJson)
@@ -129,7 +131,18 @@ function updateNumberOfChosenProducts() {
     var shoppingCartString = localStorage.getItem(getShoppingCartName());
     var shoppingCartJson = JSON.parse(shoppingCartString);
     productNumberIndicator.innerText = shoppingCartJson.length;
-   
+}
+
+function showAddedProductInSideBar(showProduct) {
+    document.getElementById("sideBar").style.width = "25em";
+    document.getElementById("prodTitle").innerText = showProduct.title;
+    document.getElementById("prodImg").innerHTML = "<img src=" + showProduct.image + ">";
+    
+    setTimeout(function(){ closeSideBar() }, 4000);
+}
+
+function closeSideBar() {
+    document.getElementById("sideBar").style.width = 0;
 }
 
 function displayTheLoggedInUsername() {
