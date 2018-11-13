@@ -1,0 +1,39 @@
+/* css for mobile index */
+@media screen and (max-width: 760px) {
+    
+    h1{
+        font-size: 2vw !important;
+    }
+    
+    
+    h2{
+        font-size: 7vw !important;
+    }
+    
+    h3{
+        font-size: 4vw !important;
+        padding-top: 0.3em;
+    }
+    
+    h4 {
+        font-size: 3.8vw !important;
+        padding: 0.3em 0.5em;
+    }
+    
+    h2, h3, h4 {
+        font-weight: bold !important;
+    }
+
+    .widthtImg {
+        width: 85%;
+    }
+    .container-fluid {
+        margin-top: 0.5em;
+        height: auto;
+        font-size: 1.1em; 
+    } 
+    .backgroundOdd:nth-child(even) {
+        padding-bottom: 1.2em;
+    }
+    
+}
