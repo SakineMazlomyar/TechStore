@@ -51,5 +51,8 @@
         margin-left: -1em;
     }
 
+    #sideBar {
+        display: none;
+    }
     /*end of  index css for tablet */
 }
