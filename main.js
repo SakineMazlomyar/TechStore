@@ -138,11 +138,7 @@ function showAddedProductInSideBar(showProduct) {
     document.getElementById("prodTitle").innerText = showProduct.title;
     document.getElementById("prodImg").innerHTML = "<img src=" + showProduct.image + ">";
     
-    setTimeout(function(){ closeSideBar() }, 4000);
-}
-
-function closeSideBar() {
-    document.getElementById("sideBar").style.width = 0;
+    setTimeout(function(){ document.getElementById("sideBar").style.width = 0; }, 3000);
 }
 
 function displayTheLoggedInUsername() {

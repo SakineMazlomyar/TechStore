@@ -56,9 +56,9 @@
         right: 0em;
         top: 5em;
 
-        border: 1px solid #5596F5;
+        border: 1px solid  #212121;
         border-radius: 3em 0 0 3em;
-        
+
         transition: 0.7s;
         text-align: center;
     }
