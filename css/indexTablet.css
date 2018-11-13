@@ -1,0 +1,52 @@
+
+/* Index css for tablet */
+@media screen and (min-width: 760px) and (max-width: 1299px){
+
+    .register-avatar-container{
+        margin: 0;
+    }
+
+    .fontStyleNavbarT{
+        font-size: 1.5em;
+
+    }
+    .widthtImg {
+        width: 50%;
+        padding-top: 0.3em;
+    }
+    
+    h2{
+        font-size: 5vw !important;
+    }
+    
+    h3{
+        font-size: 2.5vw !important;
+        padding-top: 0.5em;
+    }
+    
+    h4 {
+        font-size: 2.6vw !important;
+        padding: 0 2em;
+    }
+    
+    .shopping-button {
+        font-size: 2.5vw !important;
+        font-weight: 525 !important;
+        padding: 0.4em !important;
+        margin-top: 0.6em; 
+    }
+
+    .backgroundOdd:nth-child(even) {
+        padding-bottom: 1.9em;
+        padding-top: 1.6em !important;
+    }
+    
+    .backgroundOdd:nth-child(odd) {
+        padding-top: 4em !important;
+        padding-bottom: 1.8em;
+        margin-right: -1em;
+        margin-left: -1em;
+    }
+
+    /*end of  index css for tablet */
+}
