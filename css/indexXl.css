@@ -14,7 +14,8 @@
     }
     
     h3{
-        font-size: 1.2vw !important
+        font-size: 1.2vw !important;
+        font-weight: 600 !important;
     }
     
     h4 {
@@ -31,13 +32,13 @@
     }
 
     .backgroundOdd:nth-child(even) {
-        padding-bottom: 2em !important;
-        padding-top: 1.3em !important;
+        padding-bottom: 7em !important;
+        padding-top: 4em !important;
     }
     
     .backgroundOdd:nth-child(odd) {
-        padding-top: 1.3em !important;
-        padding-bottom: 1.9em !important;
+        padding-top: 4em !important;
+        padding-bottom: 7em !important;
         margin-right: -1em;
         margin-left: -1em;
     }

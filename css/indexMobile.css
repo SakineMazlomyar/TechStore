@@ -7,7 +7,7 @@
     
     
     h2{
-        font-size: 7vw !important;
+        font-size: 9vw !important;
     }
     
     h3{
@@ -32,8 +32,8 @@
         height: auto;
         font-size: 1.1em; 
     } 
-    .backgroundOdd:nth-child(even) {
-        padding-bottom: 1.2em;
+    .backgroundOdd:nth-child(even), .backgroundOdd:nth-child(odd) {
+        padding-top: 1.5em;
+        padding-bottom: 3.5em;
     }
-    
 }
