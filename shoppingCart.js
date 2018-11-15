@@ -140,7 +140,7 @@ function deleteButtonClick(productCartList) {
 
 function countTotalPrice(){
     /* we get the string array from localstorage and parse it to js array
-    we get the price of each obj and sum them and put in body
+    we get the price of each obj and sum them and put in the body
      */
     var totalPrice = 0;
     var choosenProducts = localStorage.getItem(getShoppingCartName());
@@ -159,7 +159,7 @@ function countTotalPrice(){
     return divForTotalPrice
 }
 function createFinishShoppingCardButton(){
-    var divForButton  =document.createElement("div")
+    var divForButton = document.createElement("div")
     divForButton.classList.add("text-center")
     var button = document.createElement("button");
     var checkSymbol = document.createElement("span")
@@ -167,7 +167,7 @@ function createFinishShoppingCardButton(){
     button.appendChild(checkSymbol)
     button.appendChild(text)
     checkSymbol.innerHTML ='<i class="fas fa-check"></i>';
-    text.innerText ="SlutFör ditt köp";
+    text.innerText ="Slutför ditt köp";
     button.classList.add("shopping-button", "btn-sm");
     var mainDiv = document.getElementById("mainContent");
     divForButton.appendChild(button)
@@ -186,8 +186,8 @@ function makeEmptyShoppingCart(){
         
         
         var divForThanks  =document.createElement("div")
-        divForThanks.classList.add("text-center")
-        var h1 = document.createElement("h1")
+        divForThanks.classList.add("text-center", "displayMessageSluförDittKöp")
+        var h1 = document.createElement("p")
         h1.innerText = "Tack för ditt köp!"
         divForThanks.appendChild(h1)
         var mainDiv = document.getElementById("mainContent");
