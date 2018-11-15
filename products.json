@@ -25,7 +25,7 @@
         "image": "images/IphoneXs256gb.png",
         "price": 15489
     },{
-        "title": "Asus Zenphone 5z",
+        "title": "Asus Zenphone",
         "description": "The AI inside every ZenFone 5Z makes it more than just a smartphone",
         "image": "images/AsusZenphone5Z.png",
         "price": 4989
@@ -35,7 +35,7 @@
         "image": "images/HuaweiP20.png",
         "price": 7589
     },{
-        "title": "Samsung Galaxy S9",
+        "title": "Galaxy S9",
         "description": "Invisible details make the difference.",
         "image": "images/SamsungS9Plus.png",
         "price": 7990
