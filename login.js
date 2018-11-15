@@ -87,3 +87,16 @@ function logOut() {
     location.reload(false);
 }
 
+var iconSign = document.querySelector("i.iconSign");
+iconSign.setAttribute("onclick", "hideShow()")
+function hideShow(){
+    var logedInButton = document.getElementById("loginButton");
+    var navbarForThePage = document.querySelector("nav");
+    if(logedInButton.style.display == "none"){
+        logedInButton.style.display = "inline-block"
+        navbarForThePage.style.height = "10em"
+    }else{
+        logedInButton.style.display = "none"
+        navbarForThePage.style.height = ""
+    }
+}
