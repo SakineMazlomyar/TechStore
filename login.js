@@ -74,7 +74,8 @@ function moveGuestShoppingCartToUserShoppingCart() {
     var loggedInAs = localStorage.getItem("loggedInAs");
     var guestShoppingCart = JSON.parse(localStorage.getItem("shoppingCart"));
     var userShoppingCart = JSON.parse(localStorage.getItem("shoppingCart" + loggedInAs));
-
+    //it should go to index and connect
+    window.location.href = "index.html";
     userShoppingCart = userShoppingCart.concat(guestShoppingCart);
 
     localStorage.setItem("shoppingCart" + loggedInAs, JSON.stringify(userShoppingCart));
@@ -85,3 +86,4 @@ function logOut() {
     localStorage.setItem("loggedInAs", "");
     location.reload(false);
 }
+
