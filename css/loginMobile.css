@@ -4,9 +4,13 @@
     }
 }
 
+.login-h2{
+    margin-top: 2em;
+}
+
 .login-main{
-    margin: 2em;
-    padding: 6em;
+    margin: 0.5em;
+    padding: 0.5em;
 }
 
 .avatar-container, .register-avatar-container{
@@ -51,6 +55,7 @@ button:hover {
     width: auto;
     padding: 10px 18px;
     background-color: #E64E4E;
+    border: none;
     color: #fff;
 }
 
@@ -67,11 +72,16 @@ button:hover {
     padding-bottom: -15px;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn {
-       width: 100%;
-    }
+.cancelbtn {
+    width: 100%;
+}
+
+
+.register-button {
+    background-color: transparent !important;
+    margin-top: 1em;
+    color: #212121;
+    border: none;
 }
 
 /* Add zoom animation to the register div*/
