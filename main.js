@@ -16,6 +16,8 @@ function loadProducts() {
         listOfProducts = products;
         addProductsToWebpage(listOfProducts);
     });
+    //hide register/login from the begning as soon script loads. The to add is on loging for both sites
+    document.getElementById("loginButton").style.display = "none";
 }
 
 function initSite() {
@@ -87,7 +89,7 @@ function createProductPrice(listOfProducts) {
 function createProductDescription(listOfProducts) {
     var productDescription = document.createElement("h4");
     productDescription.innerText = listOfProducts.description;
-    productDescription.classList.add("text-center",);
+    productDescription.classList.add("text-center");
     divForTheProduct.appendChild(productDescription)
 }
 
@@ -151,10 +153,10 @@ function displayTheLoggedInUsername() {
             document.getElementById("loginButton").style.display = "none";
         } else {
             document.getElementById("logoutButton").style.display = "none";
-            document.getElementById("loginButton").style.display = "inline-block";
         }
     }
 }
+
 
 function getShoppingCartName() {
     var loggedInUsername = localStorage.getItem("loggedInAs");

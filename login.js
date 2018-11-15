@@ -74,7 +74,8 @@ function moveGuestShoppingCartToUserShoppingCart() {
     var loggedInAs = localStorage.getItem("loggedInAs");
     var guestShoppingCart = JSON.parse(localStorage.getItem("shoppingCart"));
     var userShoppingCart = JSON.parse(localStorage.getItem("shoppingCart" + loggedInAs));
-
+    //it should go to index and connect
+    window.location.href = "index.html";
     userShoppingCart = userShoppingCart.concat(guestShoppingCart);
 
     localStorage.setItem("shoppingCart" + loggedInAs, JSON.stringify(userShoppingCart));
@@ -84,4 +85,18 @@ function moveGuestShoppingCartToUserShoppingCart() {
 function logOut() {
     localStorage.setItem("loggedInAs", "");
     location.reload(false);
+}
+
+var iconSign = document.querySelector("i.iconSign");
+iconSign.setAttribute("onclick", "hideShow()")
+function hideShow(){
+    var logedInButton = document.getElementById("loginButton");
+    var navbarForThePage = document.querySelector("nav");
+    if(logedInButton.style.display == "none"){
+        logedInButton.style.display = "inline-block"
+        navbarForThePage.style.height = "10em"
+    }else{
+        logedInButton.style.display = "none"
+        navbarForThePage.style.height = ""
+    }
 }
