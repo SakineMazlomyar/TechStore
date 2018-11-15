@@ -87,7 +87,7 @@ function createProductPrice(listOfProducts) {
 function createProductDescription(listOfProducts) {
     var productDescription = document.createElement("h4");
     productDescription.innerText = listOfProducts.description;
-    productDescription.classList.add("text-center",);
+    productDescription.classList.add("text-center");
     divForTheProduct.appendChild(productDescription)
 }
 
@@ -151,8 +151,22 @@ function displayTheLoggedInUsername() {
             document.getElementById("loginButton").style.display = "none";
         } else {
             document.getElementById("logoutButton").style.display = "none";
-            document.getElementById("loginButton").style.display = "inline-block";
+            document.getElementById("loginButton").style.display = "none";
+            // we add an icon which shows the log/reg and increase/reduce the hight of navbar
+            var iconSign = document.querySelector("i.iconSign");
+            iconSign.setAttribute("onclick", "hideShow()")
         }
+    }
+}
+function hideShow(){
+    var logedInButton =  document.getElementById("loginButton");
+    var navBar = document.querySelector("nav");
+    if(logedInButton.style.display == "none"){
+        logedInButton.style.display = "inline-block"
+        navBar.style.height = "20em"
+    }else{
+        logedInButton.style.display = "none"
+        navBar.style.height = ""
     }
 }
 
