@@ -30,7 +30,7 @@
     .container-fluid {
         margin-top: 0.5em;
         height: auto;
-        font-size: 1.1em; 
+        font-size: 2em; 
     } 
     .backgroundOdd:nth-child(even), .backgroundOdd:nth-child(odd) {
         padding-top: 1.5em;
