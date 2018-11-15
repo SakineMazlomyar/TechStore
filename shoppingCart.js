@@ -70,7 +70,7 @@ function divProductRow() {
 
 function productDiv() {
     var oneProductDiv = document.createElement("div");
-    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "divProduct", "pt-5");
+    oneProductDiv.classList.add("d-flex", "flex-column", "align-items-center", "divProduct", "pb-3");
     AllProductsRow.appendChild(oneProductDiv);
     return oneProductDiv;
 }

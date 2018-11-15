@@ -71,9 +71,10 @@ button span{
 
 .deleteButton{
     background-color: #E64E4E;
+    font-size: 1vw !important;
     color: #fff;
     border: none;
-    
+    padding-bottom: 0.5em !important;
     border-radius: 0.5em !important;
     min-height: 20px !important;
 }
