@@ -43,6 +43,11 @@ h1 i{
         width: 100%;
     }
 
+    .h1-kundvagn {
+        font-size: 4.5vh !important;
+        margin-top: 1.5em;
+    }
+
     .divProduct {
         width: 70%;
         margin: 1em;
