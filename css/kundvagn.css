@@ -22,13 +22,13 @@ h1 i{
     margin: 2em 0.7em;
     border: 2px solid #5596F5;
     border-radius: 0.6em;
-    width: 20em;
+    width: 22em;
 }
 
 .wideImg {
     object-fit: contain;
-    height: 75%;
-    width: 75%;
+    height: 70%;
+    width: 70%;
     padding-top: 1em;
 }
 
