@@ -38,7 +38,7 @@ h1 i{
 
 /*end of kundvagn*/
 
-@media screen and (max-width: 759px) {
+@media screen and (min-width: 320px) and (max-width: 759px) {
     .cancelbtn {
         width: 100%;
     }
@@ -57,4 +57,52 @@ h1 i{
         font-size: 3.5vw !important;
     }
 
+}
+
+@media screen and (min-width: 760px) and (max-width: 1023px) {
+    
+    h1 {
+        font-size: 1.5em !important;
+    }
+
+    .h1-kundvagn {
+        margin-top: 2em;
+    }
+
+    .deleteButton {
+        font-size: 1.7vw !important;
+    }
+    
+    .divProduct {
+        width: 20%;
+        margin-top: -1em;
+    }
+
+    .wideImg {
+        object-fit: contain;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1299px) {
+
+    .divProduct {
+        width: 20%;
+        margin-top: -1em;
+    }
+
+    h1 {
+        font-size: 2.3em !important;
+    }
+
+    .wideImg {
+        object-fit: contain;
+    }
+
+    .deleteButton {
+        font-size: 1.7vw !important;
+    }
+
+    .h1-kundvagn {
+        margin-top: 1em;
+    }
 }
