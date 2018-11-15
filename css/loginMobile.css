@@ -73,6 +73,13 @@ button:hover {
 }
 
 
+.register-button {
+    background-color: transparent !important;
+    margin-top: 1em;
+    color: #212121;
+    border: none;
+}
+
 /* Add zoom animation to the register div*/
 .animate {
     -webkit-animation: animatezoom 0.6s;
