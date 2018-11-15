@@ -2,6 +2,9 @@ body{
     margin: 0 auto;
     color: #212121 !important;
 }
+a:hover{
+    text-decoration: none !important;
+}
 
 /* General css for all devices */
 .backgroundOdd:nth-child(odd) {
