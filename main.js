@@ -16,6 +16,8 @@ function loadProducts() {
         listOfProducts = products;
         addProductsToWebpage(listOfProducts);
     });
+    //hide register/login from the begning as soon script loads. The to add is on loging for both sites
+    document.getElementById("loginButton").style.display = "none";
 }
 
 function initSite() {
@@ -151,24 +153,10 @@ function displayTheLoggedInUsername() {
             document.getElementById("loginButton").style.display = "none";
         } else {
             document.getElementById("logoutButton").style.display = "none";
-            document.getElementById("loginButton").style.display = "none";
-            // we add an icon which shows the log/reg and increase/reduce the hight of navbar
-            var iconSign = document.querySelector("i.iconSign");
-            iconSign.setAttribute("onclick", "hideShow()")
         }
     }
 }
-function hideShow(){
-    var logedInButton =  document.getElementById("loginButton");
-    var navBar = document.querySelector("nav");
-    if(logedInButton.style.display == "none"){
-        logedInButton.style.display = "inline-block"
-        navBar.style.height = "20em"
-    }else{
-        logedInButton.style.display = "none"
-        navBar.style.height = ""
-    }
-}
+
 
 function getShoppingCartName() {
     var loggedInUsername = localStorage.getItem("loggedInAs");
