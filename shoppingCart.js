@@ -12,6 +12,8 @@ function initShoppingCart() {
     countTotalPrice();
     displayTheLoggedInUsername();
     createFinishShoppingCardButton()
+    // //hide register/login from the begning as soon script loads. The to add is on loging for both sites
+    document.getElementById("loginButton").style.display = "none";
 }
 
 // Update the indicator in the navigation bar
