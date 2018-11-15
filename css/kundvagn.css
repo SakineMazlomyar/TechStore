@@ -74,20 +74,21 @@ h1 i{
     }
     
     .divProduct {
-        width: 20%;
+        width: 21%;
         margin-top: -1em;
     }
 
     .wideImg {
         object-fit: contain;
+        width: 80%;
+        height: 60%;
     }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1299px) {
 
     .divProduct {
-        width: 20%;
-        margin-top: -1em;
+        width: 22%;    
     }
 
     h1 {
@@ -96,13 +97,23 @@ h1 i{
 
     .wideImg {
         object-fit: contain;
+        width: 80%;
+        height: 60%;
     }
 
     .deleteButton {
         font-size: 1.7vw !important;
+        width: 60%;
+        height: 10%;
+        padding-bottom: 2em !important;
+        margin-top: 0.5em;
+        margin-bottom: -2em;
     }
 
     .h1-kundvagn {
         margin-top: 1em;
+        margin-bottom: -0.5em;
     }
+
+    
 }

@@ -168,7 +168,7 @@ function createFinishShoppingCardButton(){
     button.appendChild(text)
     checkSymbol.innerHTML ='<i class="fas fa-check"></i>';
     text.innerText ="Slutför ditt köp";
-    button.classList.add("shopping-button", "btn-sm");
+    button.classList.add("shopping-button", "btn-sm", "font-button");
     var mainDiv = document.getElementById("mainContent");
     divForButton.appendChild(button)
     mainDiv.appendChild(divForButton)
