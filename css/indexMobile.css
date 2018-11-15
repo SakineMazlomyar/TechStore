@@ -1,5 +1,5 @@
 /* css for mobile index */
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 759px) {
     
     h1{
         font-size: 4vw !important;
@@ -32,6 +32,7 @@
         height: auto;
         font-size: 1.3em; 
     } 
+    
     .backgroundOdd:nth-child(even), .backgroundOdd:nth-child(odd) {
         padding-top: 1.5em;
         padding-bottom: 3.5em;
