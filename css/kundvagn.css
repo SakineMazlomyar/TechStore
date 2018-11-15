@@ -10,6 +10,7 @@
 .h1-kundvagn{
     font-size: 4vw !important;
     font-weight: 700;
+    margin: 0.5em 0;
 }
 
 h1 i{
@@ -18,22 +19,17 @@ h1 i{
 
 .divProduct {
     background-color: #F5F5F5;
-    margin: 0.5em;
-    padding: 0.2em;
+    margin: 2em 0.7em;
     border: 2px solid #5596F5;
     border-radius: 0.6em;
-    width: 50%;
+    width: 20em;
 }
 
 .wideImg {
     object-fit: contain;
-    height: auto;
-    width: 60%;
-    max-height: 320px;
-}
-
-.buttonCart {
-    margin: 1em !important;
+    height: 75%;
+    width: 75%;
+    padding-top: 1em;
 }
 
 .h3ForTotal{
@@ -46,12 +42,4 @@ h1 i{
     .cancelbtn {
         width: 100%;
      }
-}
-/* this is the style of kundvagn/tablet style */
-@media screen and (min-width: 790px){
-    .divProduct {
-        width: 20%;
-    }
-
-  
 }

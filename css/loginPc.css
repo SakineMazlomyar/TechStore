@@ -15,5 +15,12 @@
     input[type=text], input[type=password] {
         font-size: 1vw !important;
     }
+    
+.register-button {
+    background-color: transparent !important;
+    margin-top: 1em;
+    color: #212121;
+    border: none;
+}
 }
 

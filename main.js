@@ -55,7 +55,6 @@ function createProductDiv() {
     addingSingleProduct.classList.add("d-flex", "flex-column", "align-items-center", "pt-5", "backgroundOdd");
     return addingSingleProduct;
 }
-
 // Here comes the creating of the elements in separated functions
 
 // Creating h2 elements for the names of the products
