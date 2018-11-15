@@ -38,8 +38,18 @@ h1 i{
 
 /*end of kundvagn*/
 
-@media screen and (max-width: 350px){
+@media screen and (max-width: 759px) {
     .cancelbtn {
         width: 100%;
-     }
+    }
+
+    .divProduct {
+        width: 70%;
+        margin: 1em;
+    }
+
+    .deleteButton {
+        font-size: 3.5vw !important;
+    }
+
 }
