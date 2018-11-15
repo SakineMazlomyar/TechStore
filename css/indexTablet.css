@@ -39,6 +39,10 @@
         margin-top: 0.6em; 
     }
 
+    .container-fluid {
+        margin-top: 3em;
+    }
+
     .backgroundOdd:nth-child(even) {
         margin-bottom: 5em;
         margin-top: 1em;
