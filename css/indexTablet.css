@@ -1,6 +1,6 @@
 
 /* Index css for tablet */
-@media screen and (min-width: 760px) and (max-width: 1299px){
+@media screen and (min-width: 760px) and (max-width: 1023px){
 
     .register-avatar-container{
         margin: 0;
@@ -58,5 +58,52 @@
     #sideBar {
         display: none;
     }
-    /*end of  index css for tablet */
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1299px) {
+    
+    h2 {
+        font-size: 2.6em !important;
+        font-weight: 650 !important;
+    }
+
+    h4 {
+        font-size: 2vw !important;
+        margin-bottom: 1em !important;
+        font-weight: 650 !important;
+    }
+
+    h3 {
+        font-size: 2vw !important;
+        font-weight: 650 !important;
+        margin-top: 0.5em !important;
+    }
+
+    .widthtImg {
+        width: 40%;
+        padding-top: 0.3em;
+    }
+
+    .shopping-button {
+        font-size: 2.2vw !important;
+        font-weight: 500 !important;
+        padding: 0.4em !important;
+        margin-top: 0.6em; 
+    }
+
+    .backgroundOdd:nth-child(even) {
+        margin-bottom: 5em;
+        margin-top: 1em;
+    }
+    
+    .backgroundOdd:nth-child(odd) {
+        padding-top: 4em !important;
+        padding-bottom: 5em;
+        margin-right: -1em;
+        margin-left: -1em;
+    }
+
+    #sideBar {
+        display: none;
+    }
 }
