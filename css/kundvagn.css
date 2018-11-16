@@ -17,6 +17,9 @@ h1 i{
     margin-right: 0.2em;
 }
 
+h5 {
+    margin-bottom: 1em !important;
+}
 .divProduct {
     background-color: #F5F5F5;
     margin: 2em 0.7em;
@@ -27,7 +30,7 @@ h1 i{
 
 .wideImg {
     object-fit: contain;
-    height: 70%;
+    height: 68%;
     width: 70%;
     padding-top: 1em;
 }
