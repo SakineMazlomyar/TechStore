@@ -122,6 +122,10 @@ button span{
     cursor: pointer;
     width: 100%;
 }
+
+.iconSign {
+    padding-right: 1em;
+}
 /* This is the end of the register block */
 
 
