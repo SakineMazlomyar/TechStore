@@ -45,7 +45,7 @@ h1 i{
 
     .h1-kundvagn {
         font-size: 4.5vh !important;
-        margin-top: 1.5em;
+        margin-top: 1em;
     }
 
     .divProduct {
@@ -55,6 +55,10 @@ h1 i{
 
     .deleteButton {
         font-size: 3.5vw !important;
+    }
+
+    .h3ForTotal {
+        margin-bottom: 0;
     }
 
 }
@@ -83,6 +87,7 @@ h1 i{
         width: 80%;
         height: 60%;
     }
+    
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1299px) {
@@ -113,6 +118,24 @@ h1 i{
     .h1-kundvagn {
         margin-top: 1em;
         margin-bottom: -0.5em;
+    }
+
+    .h3ForTotal {
+        margin-bottom: 1em !important;
+    }
+
+    .loggedInUsernameDiv {
+        width: 100%;
+    }
+
+    .text-center .fButton span {
+        font-size: 0.7em;
+        margin-top: 0;
+    } 
+
+    .text-center .fButton {
+        padding: 0 0.2em 0.3em 0.2em !important;
+        margin-top: 0;
     }
 
     
