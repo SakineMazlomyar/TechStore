@@ -11,6 +11,9 @@ I slutför-ditt-köp funktionen har vi istället för en pop-up valt att skriva 
 
 Vi gjorde en ikon för att registrera och logga in. En ikon tar mindre plats än en text. Passar bra på mobil. 
 Storleken på korten för produkterna har samma bredd i kundvagn.html. Snyggare än mockups!
-Vi har gjort en slidebar för när man lägger till en produkt i kundvagnen. Detta ger en synlig bekräftelse på vad som har lagts in i kundvagnen. Den här funktionen har vi sett många gånger i andra webbshoppar. 
+
+Vi gjorde en slidebar för när man lägger till en produkt i kundvagnen. Detta ger en synlig bekräftelse på vad som har lagts in i kundvagnen. Den här funktionen har vi sett många gånger i andra webbshoppar. 
+
+Vi gjorde även en login form där man kan logga in och spara mobiltelefoner för en specifik person. Om tex Erik har lagt till 4 mobiltelefoner i sin kundvagn men behöver fundera på om det är dom han verkligen vill ha så är produkterna sparade i hans användarnamn efter att han har registrerat sig. 
 
 För att se vår #TechStore [klicka här!](https://sakinemazlomyar.github.io/TechStore/)!
