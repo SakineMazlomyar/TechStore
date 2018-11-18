@@ -16,4 +16,4 @@ Vi gjorde en slidebar för när man lägger till en produkt i kundvagnen. Detta 
 
 Vi gjorde även en login form där man kan logga in och spara mobiltelefoner för en specifik person. Om tex Erik har lagt till 4 mobiltelefoner i sin kundvagn men behöver fundera på om det är dom han verkligen vill ha så är produkterna sparade i hans användarnamn efter att han har registrerat sig. 
 
-För att se vår TechStore [klicka här!](https://sakinemazlomyar.github.io/TechStore/)!
+# För att se vår TechStore [klicka här!](https://sakinemazlomyar.github.io/TechStore/)!
