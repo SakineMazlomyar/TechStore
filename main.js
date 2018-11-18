@@ -140,7 +140,7 @@ function showAddedProductInSideBar(showProduct) {
     document.getElementById("prodTitle").innerText = showProduct.title;
     document.getElementById("prodImg").innerHTML = "<img src=" + showProduct.image + ">";
     
-    setTimeout(function(){ document.getElementById("sideBar").style.width = 0; }, 3000);
+    setTimeout(function() { document.getElementById("sideBar").style.width = 0; }, 3000);
 }
 
 function displayTheLoggedInUsername() {

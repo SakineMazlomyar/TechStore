@@ -102,15 +102,16 @@ function createPriceFromProductList(productCartList) {
 //create delete button here
 function createDeleteButton(productCartList) {
     var deleteButton = document.createElement("button");
-
     var spanForDeleteButtonText = document.createElement("span");
     var spanForDeleteButtonIcon = document.createElement("span");
-    deleteButton.appendChild(spanForDeleteButtonIcon);
-    deleteButton.appendChild(spanForDeleteButtonText);
+
     spanForDeleteButtonIcon.innerHTML = '<i class="far fa-trash-alt"></i>';
     spanForDeleteButtonText.innerText = "Ta bort";
     deleteButton.classList.add("btn-sm", "deleteButton", "btn");
     deleteButton.onclick = function() { deleteButtonClick(productCartList) };
+
+    deleteButton.appendChild(spanForDeleteButtonIcon);
+    deleteButton.appendChild(spanForDeleteButtonText);
     divForSingleProduct.appendChild(deleteButton);
     return deleteButton;
 }
@@ -200,6 +201,7 @@ function makeEmptyShoppingCart(){
 function displayTheLoggedInUsername() {
     var loggedInUserDivs = document.getElementsByClassName('loggedInUsernameDiv');
     var loggedInUsername = localStorage.getItem("loggedInAs");
+    
     for(var i = 0; i < loggedInUserDivs.length; i++){
         var loggedInUserDiv = loggedInUserDivs[i];
         if (!(loggedInUsername === "")) {
