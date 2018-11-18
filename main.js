@@ -111,9 +111,8 @@ function createShoppingButton(listOfProducts) {
 function onShoppingProductButtonClick(listOfProducts) {
 
     showAddedProductInSideBar(listOfProducts);
-    var shoppingCartString = localStorage.getItem(getShoppingCartName());
 
-    //Byt Namn? (shoppingCartJson)
+    var shoppingCartString = localStorage.getItem(getShoppingCartName());
     var shoppingCartJson = JSON.parse(shoppingCartString);
 
     // Add a property to the object to distinguish mobiles of the same brand = IdNr.
@@ -121,6 +120,7 @@ function onShoppingProductButtonClick(listOfProducts) {
 	var timeStamp = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + ":" + date.getMilliseconds();	
 	listOfProducts["IdNr"] = timeStamp;
 
+    //push the new property with the chosen product into local storage
     shoppingCartJson.push(listOfProducts);
     localStorage.setItem(getShoppingCartName(), JSON.stringify(shoppingCartJson));
     updateNumberOfChosenProducts();
@@ -134,6 +134,7 @@ function updateNumberOfChosenProducts() {
     productNumberIndicator.innerText = shoppingCartJson.length;
 }
 
+// shows products that were added to shopping cart with a slidebar
 function showAddedProductInSideBar(showProduct) {
     document.getElementById("sideBar").style.width = "25em";
     document.getElementById("prodTitle").innerText = showProduct.title;
